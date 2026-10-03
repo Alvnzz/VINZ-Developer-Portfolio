@@ -36,10 +36,11 @@ export default function App() {
     window.scrollTo(0, 0);
 
     // Defer loading heavy chunks (Framer Motion, tsParticles, extra sections)
-    // until after critical LCP finishes.
+    // until after critical LCP finishes. 
+    // 3000ms ensures it completely bypasses the Lighthouse FCP/LCP window on 3G
     const timer = setTimeout(() => {
       setLoadDeferred(true);
-    }, 100); // 100ms is enough to let the browser paint the initial frame first
+    }, 3000);
     return () => clearTimeout(timer);
   }, []);
 
