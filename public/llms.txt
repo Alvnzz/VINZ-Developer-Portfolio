@@ -1,0 +1,7 @@
+# VINZ Developer Portfolio
+
+Welcome to the VINZ Developer Portfolio. I am Alfian Setya Dwi Saputra, a Frontend Architect & Digital Interface Designer specializing in WebGL, Design Systems, and High-Performance Interfaces.
+
+## Links
+- [Main Website](https://vinz-developer-portfolio.pages.dev/)
+- [GitHub](https://github.com/Alvnzz)
