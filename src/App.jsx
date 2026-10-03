@@ -1,8 +1,5 @@
-import { useEffect, useCallback } from 'react';
-import { ParticlesProvider } from '@tsparticles/react';
-import { loadSlim } from '@tsparticles/slim';
+import { useEffect, useState, lazy, Suspense } from 'react';
 import Header from './components/Header';
-import ParticleBackground from './components/ParticleBackground';
 import Hero from './components/Hero';
 import Profile from './components/Profile';
 import Experience from './components/Experience';
@@ -14,6 +11,8 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import CursorSpotlight from './components/CursorSpotlight';
 
+// Lazy load the heavy particles library to unblock critical rendering path
+const LazyParticles = lazy(() => import('./components/LazyParticles'));
 
 const SectionDivider = () => (
   <div className="w-full max-w-7xl mx-auto px-margin-mobile lg:px-margin py-24">
@@ -21,15 +20,9 @@ const SectionDivider = () => (
   </div>
 );
 
-const particlesInit = async (engine) => {
-  try {
-    await loadSlim(engine);
-  } catch (err) {
-    console.warn('Particles init failed:', err);
-  }
-};
-
 export default function App() {
+  const [loadParticles, setLoadParticles] = useState(false);
+
   useEffect(() => {
     // Prevent browser from restoring scroll position
     if ('scrollRestoration' in history) {
@@ -41,11 +34,21 @@ export default function App() {
     }
     // Force scroll to top on fresh load
     window.scrollTo(0, 0);
+
+    // Defer loading particles network chunks until after LCP paints
+    const timer = setTimeout(() => {
+      setLoadParticles(true);
+    }, 1000);
+    return () => clearTimeout(timer);
   }, []);
 
   return (
-    <ParticlesProvider init={particlesInit}>
-      <ParticleBackground />
+    <>
+      {loadParticles && (
+        <Suspense fallback={null}>
+          <LazyParticles />
+        </Suspense>
+      )}
       <CursorSpotlight />
       <Header />
       <main className="relative z-10 w-full pt-16 bg-transparent">
@@ -68,6 +71,6 @@ export default function App() {
         </div>
       </main>
       <Footer />
-    </ParticlesProvider>
+    </>
   );
 }
