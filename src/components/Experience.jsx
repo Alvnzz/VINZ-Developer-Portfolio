@@ -72,7 +72,7 @@ export default function Experience() {
                     <div className="flex items-center gap-2.5 mt-2 mb-1">
                       {role.logo && (
                         <div className="bg-white rounded p-0.5 shrink-0">
-                          <img src={role.logo} alt={role.company} loading="lazy" decoding="async" className="w-6 h-6 object-contain" />
+                          <img src={role.logo} alt={role.company} className="w-6 h-6 object-contain" />
                         </div>
                       )}
                       <span className="font-body-md text-body-md text-primary font-medium">{role.company}</span>
@@ -123,7 +123,7 @@ export default function Experience() {
                             <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/5 to-transparent group-hover:animate-sweep pointer-events-none" />
                             
                             <div className="w-14 h-14 flex-shrink-0 bg-surface-container-high/80 rounded-lg overflow-hidden shadow-sm flex items-center justify-center relative">
-                              <img src="/images/pdf-preview.webp" alt="Document Preview" loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                              <img src="/images/pdf-preview.webp" alt="Document Preview" className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                               <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors" />
                             </div>
                             <div className="flex flex-col flex-1 justify-center z-10">
@@ -140,13 +140,13 @@ export default function Experience() {
                     <div className="flex flex-col gap-4">
                       <div className="flex-1 w-full rounded-xl overflow-hidden border border-outline-variant/10 shadow-sm relative min-h-[140px] group/img bg-surface-container-high">
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover/img:opacity-100 transition-opacity duration-500 z-10 pointer-events-none" />
-                        <img src="/images/penyuluhan-ptsl.webp" alt="Penyuluhan PTSL 1" loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover group-hover/img:scale-110 transition-all duration-700 cursor-pointer" />
+                        <img src="/images/penyuluhan-ptsl.webp" alt="Penyuluhan PTSL 1" className="absolute inset-0 w-full h-full object-cover group-hover/img:scale-110 transition-all duration-700 cursor-pointer" />
                         <span className="absolute bottom-3 left-3 text-white font-label-sm text-xs opacity-0 group-hover/img:opacity-100 transition-opacity duration-500 z-20 translate-y-2 group-hover/img:translate-y-0">Penyuluhan Warga</span>
                       </div>
                       
                       <div className="flex-1 w-full rounded-xl overflow-hidden border border-outline-variant/10 shadow-sm relative min-h-[140px] group/img bg-surface-container-high">
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover/img:opacity-100 transition-opacity duration-500 z-10 pointer-events-none" />
-                        <img src="/images/penyuluhan-ptsl-2.webp" alt="Penyuluhan PTSL 2" loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover group-hover/img:scale-110 transition-all duration-700 cursor-pointer" />
+                        <img src="/images/penyuluhan-ptsl-2.webp" alt="Penyuluhan PTSL 2" className="absolute inset-0 w-full h-full object-cover group-hover/img:scale-110 transition-all duration-700 cursor-pointer" />
                         <span className="absolute bottom-3 left-3 text-white font-label-sm text-xs opacity-0 group-hover/img:opacity-100 transition-opacity duration-500 z-20 translate-y-2 group-hover/img:translate-y-0">Sosialisasi Lapangan</span>
                       </div>
                     </div>
