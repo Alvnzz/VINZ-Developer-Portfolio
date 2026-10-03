@@ -24,6 +24,16 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
 
+  // Update browser URL hash when active section changes
+  useEffect(() => {
+    const allItems = [...mainNavItems, ...moreNavItems, { path: 'contact', href: '#contact' }, { path: 'home', href: '#hero' }];
+    const currentItem = allItems.find(i => i.path === activeSection);
+    
+    if (currentItem && window.location.hash !== currentItem.href) {
+      window.history.replaceState(null, null, currentItem.href);
+    }
+  }, [activeSection]);
+
   useEffect(() => {
     const handleScroll = () => {
       const sections = [...mainNavItems, ...moreNavItems, { path: 'contact', href: '#contact' }]
