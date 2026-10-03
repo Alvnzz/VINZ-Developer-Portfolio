@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import CursorSpotlight from './components/CursorSpotlight';
-import ParticleBackground from './components/ParticleBackground';
+import ParticlesContainer from './components/ParticlesContainer';
 import Profile from './components/Profile';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
@@ -34,7 +34,7 @@ export default function App() {
 
   return (
     <>
-      <ParticleBackground />
+      <ParticlesContainer />
       <CursorSpotlight />
       <Header />
       <main className="relative z-10 w-full pt-16 bg-transparent">
