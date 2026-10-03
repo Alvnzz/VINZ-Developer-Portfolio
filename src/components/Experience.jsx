@@ -28,16 +28,24 @@ export default function Experience() {
   return (
     <>
       <section id="experience" className="relative w-full max-w-7xl mx-auto px-margin-mobile lg:px-margin py-6 lg:py-8 scroll-mt-24">
-        <div className="grid grid-cols-[auto_1fr] gap-x-3 gap-y-8">
-          <AnimatedHeader className="font-code text-[11px] lg:text-code text-primary flex items-center">
-            02 //
-          </AnimatedHeader>
-          <AnimatedHeader className="font-headline-lg text-[22px] leading-[28px] lg:text-headline-lg text-on-surface uppercase tracking-tight flex items-center">
-            {t('exp_heading')}
+        <div className="flex flex-col gap-8">
+          <AnimatedHeader className="flex items-center gap-3">
+            <span className="font-code text-[11px] lg:text-code text-primary shrink-0">
+              02 //
+            </span>
+            <h2 className="font-headline-lg text-[22px] leading-[28px] lg:text-headline-lg text-on-surface uppercase tracking-tight">
+              {t('exp_heading')}
+            </h2>
           </AnimatedHeader>
 
-          {/* Timeline */}
-          <div className="col-start-2 flex flex-col gap-space-md relative mt-2">
+          <div className="grid grid-cols-[auto_1fr] gap-x-3">
+            {/* Invisible spacer to perfectly align the timeline with the text above */}
+            <div className="font-code text-[11px] lg:text-code opacity-0 pointer-events-none select-none" aria-hidden="true">
+              02 //
+            </div>
+
+            {/* Timeline */}
+            <div className="col-start-2 flex flex-col gap-space-md relative mt-2">
             
             {/* Animated Glowing Timeline Line */}
             <div className="absolute -left-[19px] top-4 bottom-4 w-0.5 bg-surface-container-high rounded-full overflow-hidden">

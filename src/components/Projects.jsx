@@ -35,16 +35,24 @@ export default function Projects() {
   return (
     <>
       <section id="projects" className="relative w-full max-w-7xl mx-auto px-margin-mobile lg:px-margin py-6 lg:py-8 scroll-mt-24">
-        <div className="grid grid-cols-[auto_1fr] gap-x-3 gap-y-8">
-          <AnimatedHeader className="font-code text-[11px] lg:text-code text-primary flex items-center">
-            03 //
-          </AnimatedHeader>
-          <AnimatedHeader className="font-headline-lg text-[22px] leading-[28px] lg:text-headline-lg text-on-surface uppercase tracking-tight flex items-center">
-            {t('proj_heading')}
+        <div className="flex flex-col gap-8">
+          <AnimatedHeader className="flex items-center gap-3">
+            <span className="font-code text-[11px] lg:text-code text-primary shrink-0">
+              03 //
+            </span>
+            <h2 className="font-headline-lg text-[22px] leading-[28px] lg:text-headline-lg text-on-surface uppercase tracking-tight">
+              {t('proj_heading')}
+            </h2>
           </AnimatedHeader>
 
-          {/* 1 Project Data */}
-          <div className="col-span-2 grid grid-cols-1 lg:grid-cols-2 lg:gap-x-[52px] gap-y-6 lg:gap-y-0 items-stretch">
+          <div className="grid grid-cols-[auto_1fr] gap-x-3">
+            {/* Invisible spacer to perfectly align with the text above */}
+            <div className="font-code text-[11px] lg:text-code opacity-0 pointer-events-none select-none" aria-hidden="true">
+              03 //
+            </div>
+
+            {/* 1 Project Data */}
+            <div className="col-start-2 grid grid-cols-1 lg:grid-cols-2 lg:gap-x-[52px] gap-y-6 lg:gap-y-0 items-stretch">
             
             {/* LEFT COLUMN (Desktop Grouping) */}
             <div className="contents lg:flex lg:flex-col lg:h-full lg:min-w-0">
@@ -188,6 +196,7 @@ export default function Projects() {
             </StaggerParent>
 
           </div>
+        </div>
         </div>
       </section>
 
