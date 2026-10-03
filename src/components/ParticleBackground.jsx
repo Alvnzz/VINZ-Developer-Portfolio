@@ -2,15 +2,6 @@ import { useMemo, useState, useEffect } from 'react';
 import { Particles } from '@tsparticles/react';
 
 export default function ParticleBackground() {
-  const [shouldRender, setShouldRender] = useState(false);
-
-  // Defer rendering the canvas to avoid Forced Synchronous Layout on initial load
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShouldRender(true);
-    }, 500);
-    return () => clearTimeout(timer);
-  }, []);
 
   const options = useMemo(() => ({
     fullScreen: false,
@@ -36,8 +27,6 @@ export default function ParticleBackground() {
     },
     detectRetina: true,
   }), []);
-
-  if (!shouldRender) return null;
 
   return (
     <Particles

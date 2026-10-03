@@ -1,18 +1,16 @@
-import { useEffect, useState, lazy, Suspense } from 'react';
+import { useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import CursorSpotlight from './components/CursorSpotlight';
-
-// Lazy load below-the-fold components to slash "Unused Javascript"
-const LazyParticles = lazy(() => import('./components/LazyParticles'));
-const Profile = lazy(() => import('./components/Profile'));
-const Experience = lazy(() => import('./components/Experience'));
-const Projects = lazy(() => import('./components/Projects'));
-const Education = lazy(() => import('./components/Education'));
-const Skills = lazy(() => import('./components/Skills'));
-const Qualification = lazy(() => import('./components/Qualification'));
-const Contact = lazy(() => import('./components/Contact'));
-const Footer = lazy(() => import('./components/Footer'));
+import ParticleBackground from './components/ParticleBackground';
+import Profile from './components/Profile';
+import Experience from './components/Experience';
+import Projects from './components/Projects';
+import Education from './components/Education';
+import Skills from './components/Skills';
+import Qualification from './components/Qualification';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
 
 const SectionDivider = () => (
   <div className="w-full max-w-7xl mx-auto px-margin-mobile lg:px-margin py-24">
@@ -21,8 +19,6 @@ const SectionDivider = () => (
 );
 
 export default function App() {
-  const [loadDeferred, setLoadDeferred] = useState(false);
-
   useEffect(() => {
     // Prevent browser from restoring scroll position
     if ('scrollRestoration' in history) {
@@ -34,54 +30,34 @@ export default function App() {
     }
     // Force scroll to top on fresh load
     window.scrollTo(0, 0);
-
-    // Defer loading heavy chunks (Framer Motion, tsParticles, extra sections)
-    // until after critical LCP finishes. 
-    // 3000ms ensures it completely bypasses the Lighthouse FCP/LCP window on 3G
-    const timer = setTimeout(() => {
-      setLoadDeferred(true);
-    }, 3000);
-    return () => clearTimeout(timer);
   }, []);
 
   return (
     <>
-      {loadDeferred && (
-        <Suspense fallback={null}>
-          <LazyParticles />
-        </Suspense>
-      )}
+      <ParticleBackground />
       <CursorSpotlight />
       <Header />
       <main className="relative z-10 w-full pt-16 bg-transparent">
         <div className="flex flex-col w-full">
           <Hero />
           
-          {loadDeferred && (
-            <Suspense fallback={null}>
-              <SectionDivider />
-              <Profile />
-              <SectionDivider />
-              <Experience />
-              <SectionDivider />
-              <Projects />
-              <SectionDivider />
-              <Education />
-              <SectionDivider />
-              <Skills />
-              <SectionDivider />
-              <Qualification />
-              <SectionDivider />
-              <Contact />
-            </Suspense>
-          )}
+          <SectionDivider />
+          <Profile />
+          <SectionDivider />
+          <Experience />
+          <SectionDivider />
+          <Projects />
+          <SectionDivider />
+          <Education />
+          <SectionDivider />
+          <Skills />
+          <SectionDivider />
+          <Qualification />
+          <SectionDivider />
+          <Contact />
         </div>
       </main>
-      {loadDeferred && (
-        <Suspense fallback={null}>
-          <Footer />
-        </Suspense>
-      )}
+      <Footer />
     </>
   );
 }
