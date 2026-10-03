@@ -45,14 +45,8 @@ export default function Projects() {
             </h2>
           </AnimatedHeader>
 
-          <div className="grid grid-cols-[auto_1fr] gap-x-3">
-            {/* Invisible spacer to perfectly align with the text above */}
-            <div className="font-code text-[11px] lg:text-code opacity-0 pointer-events-none select-none" aria-hidden="true">
-              03 //
-            </div>
-
-            {/* 1 Project Data */}
-            <div className="col-start-2 grid grid-cols-1 lg:grid-cols-2 lg:gap-x-[52px] gap-y-6 lg:gap-y-0 items-stretch">
+          {/* 1 Project Data */}
+          <div className="w-full grid grid-cols-1 lg:grid-cols-2 lg:gap-x-[52px] gap-y-6 lg:gap-y-0 items-stretch">
             
             {/* LEFT COLUMN (Desktop Grouping) */}
             <div className="contents lg:flex lg:flex-col lg:h-full lg:min-w-0">
@@ -196,7 +190,6 @@ export default function Projects() {
             </StaggerParent>
 
           </div>
-        </div>
         </div>
       </section>
 
