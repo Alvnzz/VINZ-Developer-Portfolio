@@ -51,10 +51,10 @@ export default function Profile() {
 
               {/* Status with Pulsing Dot */}
               <div className="flex flex-col gap-2 font-body-sm text-body-sm text-on-surface-variant">
-                <div className="flex items-center justify-between py-2.5 bg-surface-container-high/50 px-4 rounded-xl border border-outline-variant/10">
-                  <span className="uppercase tracking-widest text-[10px] font-bold text-outline">{t('profile_status')}</span>
+                <div className="flex items-center justify-between gap-1 py-2.5 bg-surface-container-high/50 px-2 sm:px-4 rounded-xl border border-outline-variant/10 overflow-hidden">
+                  <span className="uppercase tracking-widest text-[9px] sm:text-[10px] font-bold text-outline whitespace-nowrap">{t('profile_status')}</span>
                   <div className="flex items-center">
-                    <span className="font-label-sm text-[10px] lg:text-label-sm uppercase tracking-wider text-green-400 animate-pulse drop-shadow-[0_0_8px_rgba(34,197,94,0.6)]">
+                    <span className="font-label-sm text-[9px] sm:text-[10px] lg:text-label-sm uppercase tracking-wider text-green-400 animate-pulse drop-shadow-[0_0_8px_rgba(34,197,94,0.6)] whitespace-nowrap">
                       {t('profile_status_value')}
                     </span>
                   </div>
