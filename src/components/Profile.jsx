@@ -53,13 +53,10 @@ export default function Profile() {
               <div className="flex flex-col gap-2 font-body-sm text-body-sm text-on-surface-variant">
                 <div className="flex items-center justify-between py-2.5 bg-surface-container-high/50 px-4 rounded-xl border border-outline-variant/10">
                   <span className="uppercase tracking-widest text-[10px] font-bold text-outline">{t('profile_status')}</span>
-                  <div className="flex items-center gap-2">
-                    {/* Glowing Pulse Dot */}
-                    <div className="relative flex h-2 w-2">
-                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                      <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-                    </div>
-                    <span className="text-green-400 font-code text-right font-medium">{t('profile_status_value')}</span>
+                  <div className="flex items-center">
+                    <span className="font-label-sm text-[10px] lg:text-label-sm uppercase tracking-wider text-green-400 animate-pulse drop-shadow-[0_0_8px_rgba(34,197,94,0.6)]">
+                      {t('profile_status_value')}
+                    </span>
                   </div>
                 </div>
               </div>
