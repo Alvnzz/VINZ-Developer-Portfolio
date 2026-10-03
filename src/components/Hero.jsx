@@ -11,7 +11,7 @@ export default function Hero() {
         <div className="flex flex-col items-center text-center gap-6 lg:gap-16">
 
           {/* ① Status Pill — elastic drop */}
-          <div className="hero-anim-drop" style={{ animationDelay: '0.1s' }}>
+          <div className="hero-anim-drop" style={{ animationDelay: '0.0s' }}>
             <div className="inline-flex items-center justify-center px-3 py-1 lg:px-4 lg:py-1.5 rounded-full bg-surface-container-high/70 backdrop-blur-md shadow-sm">
               <span className="font-label-sm text-[9px] lg:text-label-sm uppercase tracking-wider text-green-400 animate-pulse drop-shadow-[0_0_8px_rgba(34,197,94,0.6)]">{t('hero_status')}</span>
             </div>
@@ -24,7 +24,7 @@ export default function Hero() {
                 <span key={wi} className="inline-flex overflow-hidden pb-2">
                   <span
                     className="inline-block hero-anim-clip-up"
-                    style={{ animationDelay: `${0.3 + wi * 0.12}s` }}
+                    style={{ animationDelay: `${0.1 + wi * 0.08}s` }}
                   >
                     {word}
                   </span>
@@ -33,12 +33,12 @@ export default function Hero() {
             </h1>
 
             {/* ③ Subtitle — blur sweep (LCP ELEMENT) */}
-            <h2 className="font-headline-xl text-headline-xl-mobile lg:text-headline-xl text-primary font-medium tracking-tight text-center hero-anim-gradient-sweep" style={{ animationDelay: '1.2s' }}>
+            <h2 className="font-headline-xl text-headline-xl-mobile lg:text-headline-xl text-primary font-medium tracking-tight text-center hero-anim-gradient-sweep" style={{ animationDelay: '0.4s' }}>
               {t('hero_subtitle')}
             </h2>
 
             {/* ④ Description — fade scale */}
-            <p className="max-w-2xl font-body-md text-body-md lg:font-body-lg lg:text-body-lg text-on-surface-variant text-center hero-anim-fade-scale" style={{ animationDelay: '1.8s' }}>
+            <p className="max-w-2xl font-body-md text-body-md lg:font-body-lg lg:text-body-lg text-on-surface-variant text-center hero-anim-fade-scale" style={{ animationDelay: '0.6s' }}>
               {t('hero_desc')}
             </p>
           </div>
@@ -48,7 +48,7 @@ export default function Hero() {
             <a
               href="#projects"
               className="px-5 py-3 lg:px-6 lg:py-3.5 rounded-full bg-on-surface text-surface font-label-md text-[11px] lg:text-label-md uppercase tracking-wider hover:shadow-[0_0_24px_rgba(56,189,248,0.35)] transition-all duration-300 flex items-center gap-2 group hero-anim-spring"
-              style={{ animationDelay: '2.4s' }}
+              style={{ animationDelay: '0.8s' }}
             >
               <span>{t('hero_cta_projects')}</span>
               <span className="material-symbols-outlined text-[14px] lg:text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
@@ -56,7 +56,7 @@ export default function Hero() {
             <a
               href="#contact"
               className="px-5 py-3 lg:px-6 lg:py-3.5 rounded-full bg-surface-container-high/80 backdrop-blur-md text-on-surface font-label-md text-[11px] lg:text-label-md uppercase tracking-wider hover:text-primary transition-all duration-300 flex items-center gap-2 hero-anim-spring"
-              style={{ animationDelay: '2.55s' }}
+              style={{ animationDelay: '0.9s' }}
             >
               <span>{t('hero_cta_contact')}</span>
               <span className="material-symbols-outlined text-[14px] lg:text-[16px]">mail</span>

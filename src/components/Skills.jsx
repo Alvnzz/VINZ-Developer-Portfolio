@@ -109,6 +109,8 @@ function SkillTag({ tag }) {
           ? <img
               src={tag.icon}
               alt={tagName}
+              loading="lazy"
+              decoding="async"
               className={`w-3.5 h-3.5 object-contain transition-transform duration-300 group-hover:scale-125 group-hover:rotate-12 ${tag.invert ? 'invert' : ''}`}
             />
           : tag.icon
