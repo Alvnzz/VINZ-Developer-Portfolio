@@ -89,7 +89,7 @@ export default function Experience() {
                     )}
                   </div>
                   <span
-                    className={`font-code text-[12px] px-3 py-1.5 rounded-full w-fit shrink-0 self-center sm:self-start mt-2 sm:mt-0 transition-colors ${
+                    className={`font-code text-[12px] px-3 py-1.5 rounded-full w-fit shrink-0 whitespace-nowrap self-center sm:self-start mt-2 sm:mt-0 transition-colors ${
                       role.isCurrent 
                         ? 'text-primary-container bg-surface-container-high' 
                         : 'text-on-surface-variant bg-surface-container-highest group-hover/card:text-on-surface group-hover/card:bg-primary/10'

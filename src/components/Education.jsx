@@ -18,9 +18,9 @@ export default function Education() {
           <TiltCard maxTilt={1} glowOpacity={0.05} scale={1.005} className="order-2 lg:order-1 rounded-3xl bg-surface-container-low/80 hover:bg-surface-container-low transition-all duration-500 border border-transparent hover:border-outline-variant/20 hover:shadow-md h-full group/card">
             <AnimatedElement variants={fadeUp} className="p-4 lg:p-space-lg flex flex-col justify-between gap-4 lg:gap-6 h-full">
             <div className="flex flex-col gap-3">
-              <div className="flex items-center justify-between">
+              <div className="flex items-start sm:items-center justify-between gap-4">
                 <span className="font-label-sm text-label-sm uppercase text-primary tracking-wider">{t('edu_1_label')}</span>
-                <span className="font-code text-code text-on-surface-variant bg-surface-container py-1 px-3 rounded-full">2022 - 2026</span>
+                <span className="font-code text-code text-on-surface-variant bg-surface-container py-1 px-3 rounded-full shrink-0 whitespace-nowrap">2022 - 2026</span>
               </div>
               <div>
                 <h3 className="font-headline-lg text-[22px] leading-[28px] lg:text-headline-lg text-on-surface">{t('edu_1_degree')}</h3>
