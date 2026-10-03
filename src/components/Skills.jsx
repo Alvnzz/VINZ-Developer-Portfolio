@@ -128,7 +128,7 @@ export default function Skills() {
       <div className="flex flex-col gap-space-lg">
         <AnimatedHeader className="flex items-center gap-3">
           <span className="font-code text-[11px] lg:text-code text-primary">05 //</span>
-          <h3 className="font-headline-lg text-[22px] leading-[28px] lg:text-headline-lg text-on-surface uppercase tracking-tight">{t('skills_heading')}</h3>
+          <h2 className="font-headline-lg text-[22px] leading-[28px] lg:text-headline-lg text-on-surface uppercase tracking-tight">{t('skills_heading')}</h2>
         </AnimatedHeader>
 
         {/* 
@@ -154,7 +154,7 @@ export default function Skills() {
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2 text-primary">
                     <span className="material-symbols-outlined text-[20px]">{group.icon}</span>
-                    <h4 className="font-label-md text-label-md uppercase tracking-wider text-on-surface">{t(group.title)}</h4>
+                    <h3 className="font-label-md text-label-md uppercase tracking-wider text-on-surface">{t(group.title)}</h3>
                   </div>
                   {/* Static counter (performant) */}
                   <div className="flex items-center gap-1 px-1.5 py-0.5 rounded-full bg-surface-container-high/50">

@@ -10,7 +10,7 @@ export default function Education() {
       <div className="flex flex-col gap-space-lg">
         <AnimatedHeader className="flex items-center gap-3">
           <span className="font-code text-[11px] lg:text-code text-primary">04 //</span>
-          <h3 className="font-headline-lg text-[22px] leading-[28px] lg:text-headline-lg text-on-surface uppercase tracking-tight">{t('edu_heading')}</h3>
+          <h2 className="font-headline-lg text-[22px] leading-[28px] lg:text-headline-lg text-on-surface uppercase tracking-tight">{t('edu_heading')}</h2>
         </AnimatedHeader>
 
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-space-md">
@@ -23,7 +23,7 @@ export default function Education() {
                 <span className="font-code text-code text-on-surface-variant bg-surface-container py-1 px-3 rounded-full">2022 - 2026</span>
               </div>
               <div>
-                <h4 className="font-headline-lg text-[22px] leading-[28px] lg:text-headline-lg text-on-surface">{t('edu_1_degree')}</h4>
+                <h3 className="font-headline-lg text-[22px] leading-[28px] lg:text-headline-lg text-on-surface">{t('edu_1_degree')}</h3>
                 <div className="flex items-center gap-2 lg:gap-3 mt-2 w-fit group cursor-default">
                   <img 
                     src="/images/uty.webp" 
@@ -47,7 +47,7 @@ export default function Education() {
             
             <div className="flex flex-col gap-4 pt-4 mt-2 border-t border-surface-container-high/60">
               <div className="flex items-center justify-between">
-                <h5 className="font-headline-sm text-[18px] leading-[24px] lg:text-headline-sm text-on-surface">{t('edu_1_ach_heading')}</h5>
+                <h4 className="font-headline-sm text-[18px] leading-[24px] lg:text-headline-sm text-on-surface">{t('edu_1_ach_heading')}</h4>
               </div>
               
               <div className="flex flex-col gap-1.5">

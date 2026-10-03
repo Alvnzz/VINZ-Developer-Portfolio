@@ -28,7 +28,7 @@ export default function Profile() {
         {/* Section Header */}
         <AnimatedHeader className="flex items-center gap-3">
           <span className="font-code text-[11px] lg:text-code text-primary">01 //</span>
-          <h3 className="font-headline-lg text-[22px] leading-[28px] lg:text-headline-lg text-on-surface uppercase tracking-tight">{t('profile_heading')}</h3>
+          <h2 className="font-headline-lg text-[22px] leading-[28px] lg:text-headline-lg text-on-surface uppercase tracking-tight">{t('profile_heading')}</h2>
         </AnimatedHeader>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-stretch">

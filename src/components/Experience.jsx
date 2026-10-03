@@ -70,7 +70,7 @@ export default function Experience() {
                 <StaggerParent staggerDelay={0.15} className="flex flex-col gap-2 lg:gap-3 w-full">
                   <motion.div variants={fadeUp} className="flex flex-col sm:flex-row sm:items-start justify-between gap-1">
                   <div>
-                    <h4 className="font-headline-sm text-[18px] leading-[24px] lg:text-[20px] text-on-surface group-hover/card:text-primary transition-colors duration-300">{t(role.titleKey)}</h4>
+                    <h3 className="font-headline-sm text-[18px] leading-[24px] lg:text-[20px] text-on-surface group-hover/card:text-primary transition-colors duration-300">{t(role.titleKey)}</h3>
                     <div className="flex items-center gap-2.5 mt-2 mb-1">
                       {role.logo && (
                         <div className="bg-white rounded p-0.5 shrink-0">

@@ -160,7 +160,7 @@ export default function Projects() {
                       <div className="absolute inset-0 bg-primary/30 rounded-full animate-ping opacity-40 group-hover:animate-none group-hover:scale-110 transition-transform duration-300" style={{ animationDuration: '2.5s' }} />
                       <img src="/images/alvins-bakery.webp" alt="ALVIN'S Bakery Logo" className="relative z-10 w-14 h-14 lg:w-16 lg:h-16 object-contain bg-white rounded-full p-1.5 border border-outline-variant/20 group-hover:shadow-[0_0_15px_rgba(56,189,248,0.4)] transition-shadow duration-300" />
                     </div>
-                    <h4 className="font-headline-lg text-[22px] leading-[28px] lg:text-headline-lg text-on-surface">{t('proj_1_title')}</h4>
+                    <h3 className="font-headline-lg text-[22px] leading-[28px] lg:text-headline-lg text-on-surface">{t('proj_1_title')}</h3>
                   </div>
                   <div className="flex items-center">
                     <span className="font-code text-code text-primary font-medium animate-pulse drop-shadow-[0_0_8px_rgba(56,189,248,0.6)]">{t('proj_dev_stage')}</span>

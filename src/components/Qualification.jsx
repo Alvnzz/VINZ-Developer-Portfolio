@@ -131,7 +131,7 @@ export default function Qualification() {
         <div className="flex flex-col gap-space-lg">
           <AnimatedHeader className="flex items-center gap-3">
             <span className="font-code text-[11px] lg:text-code text-primary">07 //</span>
-            <h3 className="font-headline-lg text-[22px] leading-[28px] lg:text-headline-lg text-on-surface uppercase tracking-tight">{t('train_heading')}</h3>
+            <h2 className="font-headline-lg text-[22px] leading-[28px] lg:text-headline-lg text-on-surface uppercase tracking-tight">{t('train_heading')}</h2>
           </AnimatedHeader>
 
           <StaggerParent className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-space-md" staggerDelay={0.1}>
@@ -164,7 +164,7 @@ export default function Qualification() {
                     <div className="flex items-center justify-between">
                       <span className="font-label-sm text-label-sm uppercase text-primary tracking-wider">{t(tr.categoryKey)}</span>
                     </div>
-                    <h4 className="font-headline-sm text-[16px] leading-[22px] lg:text-headline-sm text-on-surface">{t(tr.titleKey)}</h4>
+                    <h3 className="font-headline-sm text-[16px] leading-[22px] lg:text-headline-sm text-on-surface">{t(tr.titleKey)}</h3>
                     
                     <div className="flex flex-col gap-0.5 mt-1">
                       <div className="flex items-center gap-2">

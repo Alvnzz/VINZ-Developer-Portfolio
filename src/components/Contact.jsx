@@ -57,14 +57,14 @@ export default function Contact() {
       <div className="flex flex-col gap-space-lg">
         <AnimatedHeader className="flex items-center gap-3">
           <span className="font-code text-[11px] lg:text-code text-primary">09 //</span>
-          <h3 className="font-headline-lg text-[22px] leading-[28px] lg:text-headline-lg text-on-surface uppercase tracking-tight">{t('contact_heading')}</h3>
+          <h2 className="font-headline-lg text-[22px] leading-[28px] lg:text-headline-lg text-on-surface uppercase tracking-tight">{t('contact_heading')}</h2>
         </AnimatedHeader>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-stretch">
           {/* Left: Info */}
           <AnimatedElement variants={slideInLeft} className="lg:col-span-5 rounded-3xl bg-surface-container-low/80 hover:bg-surface-container-low transition-all duration-500 p-4 lg:p-space-lg flex flex-col justify-between gap-4 lg:gap-space-lg shadow-sm border border-transparent hover:border-outline-variant/20 hover:shadow-md">
             <div className="flex flex-col gap-space-md">
-              <h4 className="font-headline-sm text-[18px] leading-[24px] lg:text-[20px] text-on-surface">{t('contact_info_title')}</h4>
+              <h3 className="font-headline-sm text-[18px] leading-[24px] lg:text-[20px] text-on-surface">{t('contact_info_title')}</h3>
               
               <div className="flex flex-col gap-3 font-code text-[13px] mt-2">
                 {/* Address */}
