@@ -89,8 +89,10 @@ export default function Profile() {
                   <span className="material-symbols-outlined text-[14px]">language</span>
                   {t('profile_language')}
                 </AnimatedElement>
-                <AnimatedElement variants={fadeUp} className="font-body-md text-body-sm lg:text-body-lg text-on-surface-variant">
-                  <span className="text-on-surface font-medium">Indonesia</span> (Native) <span className="mx-2 text-surface-container-highest">|</span> <span className="text-on-surface font-medium">Inggris</span> (Intermediate - Passive)
+                <AnimatedElement variants={fadeUp} className="font-body-md text-body-sm lg:text-body-lg text-on-surface-variant flex flex-col md:flex-row md:items-center gap-1 md:gap-0">
+                  <span><span className="text-on-surface font-medium">Indonesia</span> (Native)</span>
+                  <span className="hidden md:inline mx-2 text-surface-container-highest">|</span>
+                  <span><span className="text-on-surface font-medium">Inggris</span> (Intermediate - Passive)</span>
                 </AnimatedElement>
                 <AnimatedElement variants={expandLine} className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-surface-container-highest via-surface-container-highest to-transparent" />
               </div>
