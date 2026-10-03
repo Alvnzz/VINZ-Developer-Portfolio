@@ -87,12 +87,12 @@ export default function Hero() {
         }
 
         .hero-anim-gradient-sweep {
-          opacity: 1;
+          opacity: 0;
           animation: heroSweep 1.5s ease forwards;
         }
         @keyframes heroSweep {
-          0%   { filter: blur(8px); letter-spacing: 0.15em; opacity: 1; }
-          50%  { filter: blur(2px); letter-spacing: 0.02em; opacity: 1; }
+          0%   { filter: blur(8px); letter-spacing: 0.15em; opacity: 0; }
+          50%  { filter: blur(2px); letter-spacing: 0.02em; opacity: 0.8; }
           100% { filter: blur(0px); letter-spacing: -0.03em; opacity: 1; }
         }
 
