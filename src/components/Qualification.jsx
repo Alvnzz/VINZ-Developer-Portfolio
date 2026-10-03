@@ -22,7 +22,7 @@ const items = [
     categoryKey: 'train_2_category',
     btnKey: 'btn_train_doc',
     image: '/images/freecodecamp.webp',
-    logo: 'https://avatars.githubusercontent.com/u/9892522?v=4',
+    logo: 'https://avatars.githubusercontent.com/u/9892522?v=4&s=80',
     logoClass: 'object-cover scale-110',
     bgClass: 'bg-transparent'
   },
