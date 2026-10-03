@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { AnimatedHeader, AnimatedElement, StaggerParent, fadeUp, popIn, slideInRight } from '../utils/animations';
+import { motion } from 'framer-motion';
 
 const roles = [
   {
@@ -66,7 +67,8 @@ export default function Experience() {
                   <div className="absolute inset-0 rounded-full border border-primary animate-ping opacity-0 group-hover/card:opacity-40 transition-opacity" style={{ animationDuration: '2s' }} />
                 </div>
 
-                <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-1">
+                <StaggerParent staggerDelay={0.15} className="flex flex-col gap-2 lg:gap-3 w-full">
+                  <motion.div variants={fadeUp} className="flex flex-col sm:flex-row sm:items-start justify-between gap-1">
                   <div>
                     <h4 className="font-headline-sm text-[18px] leading-[24px] lg:text-[20px] text-on-surface group-hover/card:text-primary transition-colors duration-300">{t(role.titleKey)}</h4>
                     <div className="flex items-center gap-2.5 mt-2 mb-1">
@@ -95,10 +97,10 @@ export default function Experience() {
                   >
                     {t(role.periodKey)}{role.periodEndKey ? ` - ${t(role.periodEndKey)}` : ''}
                   </span>
-                </div>
+                  </motion.div>
 
-                <div className="flex flex-col gap-6 mt-3">
-                  {/* Main Content Row: Description, PDF, and Images */}
+                  <motion.div variants={fadeUp} className="flex flex-col gap-6 mt-3">
+                    {/* Main Content Row: Description, PDF, and Images */}
                   <div className="grid grid-cols-1 xl:grid-cols-[1fr_360px] gap-6 xl:gap-[52px]">
                     {/* Left Column: Description, Attachment */}
                     <div className="flex flex-col gap-4">
@@ -151,9 +153,10 @@ export default function Experience() {
                       </div>
                     </div>
                   </div>
+                  </motion.div>
 
                   {/* Tags Row */}
-                  <div className="grid grid-cols-1 xl:grid-cols-[1fr_360px] gap-6 xl:gap-[52px]">
+                  <motion.div variants={fadeUp} className="grid grid-cols-1 xl:grid-cols-[1fr_360px] gap-6 xl:gap-[52px]">
                     <div className="flex flex-wrap gap-2 pt-2 border-t border-surface-container-high/60">
                       {role.tags.map((tag) => (
                         <div key={tag} className="px-3 py-1 rounded-md bg-surface-container-highest/50 text-on-surface-variant font-code text-[11px] hover:bg-primary/10 hover:text-primary transition-colors cursor-default border border-transparent hover:border-primary/20 shadow-sm">
@@ -162,8 +165,8 @@ export default function Experience() {
                       ))}
                     </div>
                     <div className="hidden xl:block"></div>
-                  </div>
-                </div>
+                  </motion.div>
+                </StaggerParent>
               </AnimatedElement>
             ))}
           </div>
