@@ -1,13 +1,48 @@
 {
-  "version": "1.0",
-  "name": "VINZ Developer Portfolio",
-  "description": "Portfolio of Alfian Setya Dwi Saputra",
-  "type": "website",
-  "endpoints": [
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "Alfian Setya Dwi Saputra (VINZ)",
+    "identifier": "did:web:vinz-developer-portfolio.pages.dev",
+    "documentationUrl": "https://vinz-developer-portfolio.pages.dev/llms.txt",
+    "logoUrl": "https://vinz-developer-portfolio.pages.dev/favicon.svg"
+  },
+  "entries": [
     {
+      "identifier": "urn:air:vinz-developer-portfolio.pages.dev:portfolio:website",
+      "displayName": "VINZ Developer Portfolio",
+      "type": "text/html",
       "url": "https://vinz-developer-portfolio.pages.dev/",
-      "description": "Main Portfolio Page",
-      "type": "html"
+      "description": "Portfolio of Alfian Setya Dwi Saputra, a Web & Mobile App Developer: projects, experience, education, and certifications.",
+      "tags": ["portfolio", "web-developer", "mobile-developer", "react", "flutter"],
+      "representativeQueries": [
+        "Who is Alfian Setya Dwi Saputra?",
+        "Show VINZ developer portfolio projects",
+        "Web and mobile app developer portfolio"
+      ]
+    },
+    {
+      "identifier": "urn:air:vinz-developer-portfolio.pages.dev:portfolio:llms",
+      "displayName": "LLM-Friendly Site Summary",
+      "type": "text/markdown",
+      "url": "https://vinz-developer-portfolio.pages.dev/llms.txt",
+      "description": "Machine-readable summary of the portfolio intended for AI agents and LLMs.",
+      "tags": ["llms.txt", "summary"],
+      "representativeQueries": [
+        "Summarize Alfian Setya Dwi Saputra's portfolio",
+        "What skills does VINZ developer have?"
+      ]
+    },
+    {
+      "identifier": "urn:air:vinz-developer-portfolio.pages.dev:portfolio:cv",
+      "displayName": "Curriculum Vitae",
+      "type": "application/pdf",
+      "url": "https://vinz-developer-portfolio.pages.dev/documents/CV_Alfian_Setya_Dwi_Saputra.pdf",
+      "description": "Latest CV of Alfian Setya Dwi Saputra.",
+      "tags": ["cv", "resume"],
+      "representativeQueries": [
+        "Download Alfian Setya Dwi Saputra CV",
+        "Get VINZ developer resume"
+      ]
     }
   ]
 }
