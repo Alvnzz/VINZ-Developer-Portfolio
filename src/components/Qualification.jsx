@@ -184,15 +184,17 @@ export default function Qualification() {
             ))}
           </StaggerParent>
 
-          <div className="flex justify-center mt-2">
-            <button 
-              onClick={() => setShowAll(!showAll)}
-              className="px-6 py-2.5 rounded-full border border-surface-container-high/60 text-on-surface-variant hover:text-primary hover:border-primary/50 hover:bg-surface-container-low font-label-md text-[12px] uppercase tracking-wider transition-all flex items-center gap-2"
-            >
-              {showAll ? t('show_less') || 'Lebih Sedikit' : t('show_more') || 'Selengkapnya'}
-              <span className={`material-symbols-outlined text-[16px] transition-transform ${showAll ? 'rotate-180' : ''}`}>expand_more</span>
-            </button>
-          </div>
+          {items.length > 3 && (
+            <div className={`justify-center mt-2 flex ${items.length <= 6 ? 'md:hidden' : ''}`}>
+              <button 
+                onClick={() => setShowAll(!showAll)}
+                className="px-6 py-2.5 rounded-full border border-surface-container-high/60 text-on-surface-variant hover:text-primary hover:border-primary/50 hover:bg-surface-container-low font-label-md text-[12px] uppercase tracking-wider transition-all flex items-center gap-2"
+              >
+                {showAll ? t('show_less') || 'Lebih Sedikit' : t('show_more') || 'Selengkapnya'}
+                <span className={`material-symbols-outlined text-[16px] transition-transform ${showAll ? 'rotate-180' : ''}`}>expand_more</span>
+              </button>
+            </div>
+          )}
         </div>
       </section>
 
