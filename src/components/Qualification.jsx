@@ -62,24 +62,6 @@ const items = [
     logoClass: 'object-contain scale-[70%]',
     bgClass: 'bg-white shadow-sm'
   },
-  {
-    titleKey: 'cert_3_title', descKey: null,
-    dateKey: 'cert_3_date', institution: 'Center for Digital Society (CfDS)',
-    categoryKey: 'cert_3_category',
-    btnKey: 'btn_cert_doc',
-    image: '/images/cfds.webp',
-    logo: 'https://digitalsociety.id/wp-content/uploads/2024/01/Logo-Mini-YouTube.png',
-    logoClass: 'object-cover scale-100',
-    bgClass: 'bg-white shadow-sm'
-  },
-  {
-    titleKey: 'cert_4_title', descKey: null,
-    dateKey: 'cert_4_date', institution: 'Devcode.ai',
-    categoryKey: 'cert_4_category',
-    btnKey: 'btn_cert_doc',
-    image: '/images/devcode.webp',
-    logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0wH_zLtCHIaroHCJw7XU_wFaHjt6juQ_vgrsO37_jlg&s'
-  },
 ];
 
 function DescriptionToggle({ text }) {
