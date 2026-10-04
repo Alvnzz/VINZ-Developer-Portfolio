@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { useTheme } from '../context/ThemeContext';
 
-const LOGO_URL = '/images/av.webp';
+const LOGO_URL = './images/av.webp';
 const AVATAR_URL = 'https://lh3.googleusercontent.com/aida-public/AB6AXuAzoL141KWv5zvCL1Bzxy2p9dAH3Fjr9bFA7STzPt--FpkDaNjT3AY_eu6SjHm0r3bFzKaQAwDLueR-E48sXGjgzZL_l5p6hN2f_QFfaVDM8Q2kgutwfJjQYQnhLSyIqk7v1Yy8mX64VXFRnRXk7KZVKDuasu_LghoI9TOppEQVzxZfxcBoDo2UFsMWxIJ08l78zpjqrqKIhmdRmuaCBrpz9HqPUh8DXODPwx4c8zdJRhm_InSfRAXq';
 
 const mainNavItems = [

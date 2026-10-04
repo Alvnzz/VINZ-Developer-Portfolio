@@ -10,8 +10,8 @@ const items = [
     dateKey: 'train_1_date', institution: 'Digital Talent Academy',
     categoryKey: 'train_1_category',
     btnKey: 'btn_train_doc',
-    image: '/images/komdigi-1.webp',
-    images: ['/images/komdigi-1.webp', '/images/komdigi-2.webp'],
+    image: './images/komdigi-1.webp',
+    images: ['./images/komdigi-1.webp', './images/komdigi-2.webp'],
     logo: 'https://mobile.sdmdigital.id/assets/img/dts-mono.png',
     logoClass: 'object-contain scale-[70%]',
     bgClass: 'bg-white shadow-sm'
@@ -21,7 +21,7 @@ const items = [
     dateKey: 'train_2_date', institution: 'freeCodeCamp',
     categoryKey: 'train_2_category',
     btnKey: 'btn_train_doc',
-    image: '/images/freecodecamp.webp',
+    image: './images/freecodecamp.webp',
     logo: 'https://avatars.githubusercontent.com/u/9892522?v=4&s=80',
     logoClass: 'object-cover scale-110',
     bgClass: 'bg-transparent'
@@ -31,7 +31,7 @@ const items = [
     dateKey: 'train_3_date', institution: 'RevoU',
     categoryKey: 'train_3_category',
     btnKey: 'btn_train_doc',
-    image: '/images/revou.webp',
+    image: './images/revou.webp',
     logo: 'https://www.google.com/s2/favicons?domain=revou.co&sz=128'
   },
   
@@ -41,7 +41,7 @@ const items = [
     dateKey: 'cert_1_date', institution: 'HackerRank',
     categoryKey: 'cert_1_category',
     btnKey: 'btn_cert_doc',
-    image: '/images/hackerrank.webp',
+    image: './images/hackerrank.webp',
     logo: 'https://www.google.com/s2/favicons?domain=hackerrank.com&sz=128'
   },
   {
@@ -49,7 +49,7 @@ const items = [
     dateKey: 'cert_2_date', institution: 'Google Analytics',
     categoryKey: 'cert_2_category',
     btnKey: 'btn_cert_doc',
-    image: '/images/google-analytics.webp',
+    image: './images/google-analytics.webp',
     logo: 'https://www.google.com/s2/favicons?domain=google.com&sz=128'
   },
   {
@@ -57,7 +57,7 @@ const items = [
     dateKey: 'cert_5_date', institution: 'Altair RapidMiner',
     categoryKey: 'cert_5_category',
     btnKey: 'btn_cert_doc',
-    image: '/images/rapidminer.webp',
+    image: './images/rapidminer.webp',
     logo: 'https://media.licdn.com/dms/image/v2/C4E0BAQFK5k_r2gO70Q/company-logo_200_200/company-logo_200_200/0/1651579826463/rapidminer_logo?e=2147483647&v=beta&t=VuUCVCPWatWXrjBhIiRGgm6IvBf9JC4aJeYfsQg2wDE',
     logoClass: 'object-contain scale-[70%]',
     bgClass: 'bg-white shadow-sm'
@@ -167,7 +167,7 @@ export default function Qualification() {
                   
                   <div className="mt-auto pt-4 border-t border-surface-container-high/60">
                     <a 
-                      href={tr.image.replace('/images/', '/images/downloads/').replace('.webp', '.png')} 
+                      href={tr.image.replace('./images/', './images/downloads/').replace('.webp', '.png')} 
                       download 
                       target="_blank" 
                       rel="noopener noreferrer" 

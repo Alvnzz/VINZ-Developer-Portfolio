@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 const roles = [
   {
     titleKey: 'exp_1_title', descKey: 'exp_1_desc', company: 'Badan Pertanahan Nasional (Satuan Tugas Pendaftaran Tanah Sistematis Lengkap Desa Dungus)',
-    logo: '/images/bpn.webp',
+    logo: './images/bpn.webp',
     periodKey: 'exp_1_period', locationKey: 'exp_1_location', typeKey: 'exp_1_type',
     docKey: 'exp_1_doc',
     pdfLink: '/documents/Portofolio_Dokumentasi_Kerja_PTSL_Alfian_Setya_Dwi_Saputra.pdf',
@@ -125,7 +125,7 @@ export default function Experience() {
                             <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/5 to-transparent group-hover:animate-sweep pointer-events-none" />
                             
                             <div className="w-14 h-14 flex-shrink-0 bg-surface-container-high/80 rounded-lg overflow-hidden shadow-sm flex items-center justify-center relative">
-                              <img src="/images/pdf-preview.webp" alt="Document Preview" className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                              <img src="./images/pdf-preview.webp" alt="Document Preview" className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                               <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors" />
                             </div>
                             <div className="flex flex-col flex-1 justify-center z-10">
@@ -142,13 +142,13 @@ export default function Experience() {
                     <div className="flex flex-col gap-4">
                       <div className="flex-1 w-full rounded-xl overflow-hidden border border-outline-variant/10 shadow-sm relative min-h-[140px] group/img bg-surface-container-high">
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover/img:opacity-100 transition-opacity duration-500 z-10 pointer-events-none" />
-                        <img src="/images/penyuluhan-ptsl.webp" alt="Penyuluhan PTSL 1" className="absolute inset-0 w-full h-full object-cover group-hover/img:scale-110 transition-all duration-700 cursor-pointer" />
+                        <img src="./images/penyuluhan-ptsl.webp" alt="Penyuluhan PTSL 1" className="absolute inset-0 w-full h-full object-cover group-hover/img:scale-110 transition-all duration-700 cursor-pointer" />
                         <span className="absolute bottom-3 left-3 text-white font-label-sm text-xs opacity-0 group-hover/img:opacity-100 transition-opacity duration-500 z-20 translate-y-2 group-hover/img:translate-y-0">Penyuluhan Warga</span>
                       </div>
                       
                       <div className="flex-1 w-full rounded-xl overflow-hidden border border-outline-variant/10 shadow-sm relative min-h-[140px] group/img bg-surface-container-high">
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover/img:opacity-100 transition-opacity duration-500 z-10 pointer-events-none" />
-                        <img src="/images/penyuluhan-ptsl-2.webp" alt="Penyuluhan PTSL 2" className="absolute inset-0 w-full h-full object-cover group-hover/img:scale-110 transition-all duration-700 cursor-pointer" />
+                        <img src="./images/penyuluhan-ptsl-2.webp" alt="Penyuluhan PTSL 2" className="absolute inset-0 w-full h-full object-cover group-hover/img:scale-110 transition-all duration-700 cursor-pointer" />
                         <span className="absolute bottom-3 left-3 text-white font-label-sm text-xs opacity-0 group-hover/img:opacity-100 transition-opacity duration-500 z-20 translate-y-2 group-hover/img:translate-y-0">Sosialisasi Lapangan</span>
                       </div>
                     </div>

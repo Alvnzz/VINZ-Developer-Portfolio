@@ -63,7 +63,7 @@ const groups = [
   {
     icon: 'database', title: 'Database & Storage',
     tags: [
-      { name: 'Firebase', icon: '/icons/firebase.svg' },
+      { name: 'Firebase', icon: './icons/firebase.svg' },
       { name: 'MySQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg' },
       { name: 'SQLite', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original.svg' },
       { name: 'MongoDB', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg' },
@@ -76,17 +76,17 @@ const groups = [
       { name: 'GitHub', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg', invert: true },
       { name: 'Git', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg' },
       { name: 'VS Code', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg' },
-      { name: 'Antigravity', icon: '/icons/antigravity.webp' },
+      { name: 'Antigravity', icon: './icons/antigravity.webp' },
       { name: 'Postman', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg' },
-      { name: 'Android Studio', icon: '/icons/android-studio.svg' }
+      { name: 'Android Studio', icon: './icons/android-studio.svg' }
     ],
   },
   {
     icon: 'edit_document', title: 'Productivity Tools',
     tags: [
-      { name: 'Microsoft Word', icon: '/icons/word.svg' },
-      { name: 'Microsoft Excel', icon: '/icons/excel.svg' },
-      { name: 'Microsoft PowerPoint', icon: '/icons/powerpoint.svg' }
+      { name: 'Microsoft Word', icon: './icons/word.svg' },
+      { name: 'Microsoft Excel', icon: './icons/excel.svg' },
+      { name: 'Microsoft PowerPoint', icon: './icons/powerpoint.svg' }
     ],
   },
 ];

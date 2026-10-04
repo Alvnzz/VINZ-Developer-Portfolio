@@ -27,7 +27,7 @@ export default function Footer() {
           <div className="md:col-span-5 flex flex-col gap-4">
             <div className="flex items-center justify-between w-full">
               <div className="flex items-center gap-3">
-                <img alt="Logo" className="w-8 h-8 rounded-full object-cover border-2 border-surface-variant shadow-sm" src="/images/av.webp" />
+                <img alt="Logo" className="w-8 h-8 rounded-full object-cover border-2 border-surface-variant shadow-sm" src="./images/av.webp" />
                 <span className="font-headline-sm text-[16px] leading-[22px] lg:text-headline-sm text-on-surface font-semibold pt-1 uppercase tracking-wider">
                   VINZ DEVELOPER
                 </span>

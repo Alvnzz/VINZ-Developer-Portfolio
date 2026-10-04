@@ -26,7 +26,7 @@ export default function Education() {
                 <h3 className="font-headline-lg text-[22px] leading-[28px] lg:text-headline-lg text-on-surface">{t('edu_1_degree')}</h3>
                 <div className="flex items-center gap-2 lg:gap-3 mt-2 w-fit group cursor-default">
                   <img 
-                    src="/images/uty.webp" 
+                    src="./images/uty.webp" 
                     alt="Logo UTY" 
                     className="w-8 h-8 object-contain rounded-full transition-transform duration-700 group-hover:rotate-[360deg] group-hover:scale-110 shadow-sm" 
                   />
@@ -81,7 +81,7 @@ export default function Education() {
             {/* Top Image - No Address */}
             <TiltCard maxTilt={5} glowOpacity={0.15} scale={1.02} className="relative flex-1 w-full min-h-[160px] lg:min-h-[200px] rounded-2xl overflow-hidden border border-outline-variant/20 shadow-sm group cursor-default">
               <img 
-                src="/images/graduation.webp" 
+                src="./images/graduation.webp" 
                 alt="Alfian Setya Dwi Saputra Graduation" 
                 className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700" 
               />
@@ -90,7 +90,7 @@ export default function Education() {
             {/* Bottom Image - With Address */}
             <TiltCard maxTilt={5} glowOpacity={0.15} scale={1.02} className="relative flex-1 w-full min-h-[160px] lg:min-h-[200px] rounded-2xl overflow-hidden border border-outline-variant/20 shadow-sm group cursor-default">
               <img 
-                src="/images/uty-campus.webp" 
+                src="./images/uty-campus.webp" 
                 alt="Universitas Teknologi Yogyakarta Graduation" 
                 className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
               />

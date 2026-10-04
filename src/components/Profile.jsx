@@ -4,7 +4,7 @@ import { AnimatedHeader, AnimatedElement, StaggerParent, slideInLeft, fadeUp } f
 import { motion } from 'framer-motion';
 import TiltCard from './TiltCard';
 
-const PORTRAIT_URL = '/images/profile.webp';
+const PORTRAIT_URL = './images/profile.webp';
 
 // Unique Animation for Borders
 const expandLine = {
