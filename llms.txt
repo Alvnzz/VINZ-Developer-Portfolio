@@ -1,0 +1,7 @@
+# VINZ Developer Portfolio
+
+Welcome to the VINZ Developer Portfolio. I am Alfian Setya Dwi Saputra, a Web & Mobile App Developer specializing in modern web and mobile application development.
+
+## Links
+- [Main Website](https://vinz-developer-portfolio.pages.dev/)
+- [GitHub](https://github.com/Alvnzz)
