@@ -65,7 +65,7 @@ export default function Education() {
                 {t('edu_1_ach_desc')}
               </p>
               
-              <a href="/documents/Jurnal Publikasi Ilmiah Jutisi - Alfian Setya Dwi Saputra.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 px-5 py-3 mt-0.5 w-full sm:w-fit rounded-xl border border-outline-variant/30 bg-surface-container-low/30 hover:bg-surface-container-high/50 hover:border-outline-variant/60 hover:shadow-[0_4px_15px_rgba(56,189,248,0.15)] hover:-translate-y-1 transition-all duration-300 group cursor-pointer">
+              <a href="/documents/Jurnal_Publikasi_Ilmiah_Jutisi_-_Alfian_Setya_Dwi_Saputra.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 px-5 py-3 mt-0.5 w-full sm:w-fit rounded-xl border border-outline-variant/30 bg-surface-container-low/30 hover:bg-surface-container-high/50 hover:border-outline-variant/60 hover:shadow-[0_4px_15px_rgba(56,189,248,0.15)] hover:-translate-y-1 transition-all duration-300 group cursor-pointer">
                 <div className="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center group-hover:bg-primary/10 transition-colors">
                    <span className="material-symbols-outlined text-[18px] text-on-surface-variant group-hover:text-primary transition-colors">description</span>
                 </div>

@@ -9,7 +9,7 @@ const roles = [
     logo: '/images/bpn.webp',
     periodKey: 'exp_1_period', locationKey: 'exp_1_location', typeKey: 'exp_1_type',
     docKey: 'exp_1_doc',
-    pdfLink: '/documents/Portofolio Dokumentasi Kerja PTSL - Alfian Setya Dwi Saputra.pdf',
+    pdfLink: '/documents/Portofolio_Dokumentasi_Kerja_PTSL_-_Alfian_Setya_Dwi_Saputra.pdf',
     isCurrent: false,
     tags: ['Administrasi Operasional', 'Entri Data', 'Analisis Data', 'Verifikasi Dokumen', 'Microsoft Word', 'Microsoft Excel', 'Manajemen Waktu', 'Ketelitian Tinggi', 'Kerja Sama Tim', 'Koordinasi Lapangan'],
   },
