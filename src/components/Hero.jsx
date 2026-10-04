@@ -1,5 +1,5 @@
 import { useLanguage } from '../context/LanguageContext';
-import { motion, useReducedMotion } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 // ─── Animation Config ───
 // PERFORMANCE: every variant below animates ONLY `transform` (x/y/scale) and `opacity`.
@@ -39,14 +39,12 @@ const NAME_WORDS = 'ALFIAN SETYA DWI SAPUTRA'.split(' ');
 // ─── Hero Component ───
 export default function Hero() {
   const { t } = useLanguage();
-  // Accessibility + perf: skip all entrance/exit motion if the OS requests reduced motion.
-  const reduceMotion = useReducedMotion();
 
   return (
     <motion.section 
       id="hero" 
       className="relative w-full max-w-7xl mx-auto px-margin-mobile lg:px-margin min-h-screen flex flex-col justify-center pt-2 pb-48 lg:pt-0 lg:pb-24 scroll-mt-24"
-      initial={reduceMotion ? false : 'hidden'}
+      initial="hidden"
       whileInView="visible"
       viewport={viewport}
     >
