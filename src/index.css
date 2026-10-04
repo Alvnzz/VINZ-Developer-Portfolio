@@ -51,6 +51,48 @@
   }
 }
 
+/* ─── Hero reveal animation ───
+   WHY pure CSS: transitions on `transform`/`opacity` run on the compositor (GPU) thread,
+   so they stay smooth even while JS is busy on first load (particles init, React render).
+   JS-driven per-frame animation stuttered in exactly that window.
+   Toggled by [data-inview] on the section → plays enter AND reverse/exit. */
+.hero-reveal {
+  --hero-y: 16px;
+  --hero-s: 1;
+  --hero-d: 0s;
+  --hero-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  opacity: 0;
+  transform: translate3d(0, var(--hero-y), 0) scale(var(--hero-s));
+  transition: opacity 0.3s ease-in, transform 0.3s ease-in;
+  /* Pre-promote to its own GPU layer to avoid a first-frame hitch when the animation starts. */
+  will-change: transform, opacity;
+}
+
+[data-inview='true'] .hero-reveal {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+  transition:
+    opacity 0.7s var(--hero-ease) var(--hero-d),
+    transform 0.7s var(--hero-ease) var(--hero-d);
+}
+
+/* Variants only override custom properties — no duplicated transition logic. */
+.hero-reveal--drop {
+  --hero-y: -24px;
+  --hero-ease: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.hero-reveal--clip {
+  --hero-y: 110%;
+  opacity: 1; /* masked by parent overflow-hidden, so no fade needed */
+}
+
+.hero-reveal--pop {
+  --hero-y: 12px;
+  --hero-s: 0.9;
+  --hero-ease: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
 /* Material Symbols base sizing */
 .material-symbols-outlined {
   font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
