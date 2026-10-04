@@ -1,49 +1,52 @@
 import { useLanguage } from '../context/LanguageContext';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 
+// ─── Animation Config ───
+// PERFORMANCE: every variant below animates ONLY `transform` (x/y/scale) and `opacity`.
+// These run on the GPU compositor thread. Previously we animated `filter: blur()`
+// (full repaint every frame) and `letterSpacing` (full layout reflow every frame),
+// which caused jank on low-end/mobile devices.
 const viewport = { once: false, amount: 0.1, margin: '-20px' };
-const exitTransition = { duration: 0.4, ease: 'easeIn' };
+const EASE_OUT_EXPO = [0.16, 1, 0.3, 1];
+const EASE_BACK = [0.34, 1.56, 0.64, 1];
+const exitTransition = { duration: 0.3, ease: 'easeIn' };
 
 const heroDrop = {
-  hidden: { opacity: 0, y: -40, scale: 0.8, transition: exitTransition },
-  visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.8, ease: [0.34, 1.56, 0.64, 1], delay: 0.0 } }
+  hidden: { opacity: 0, y: -24, transition: exitTransition },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: EASE_BACK } }
 };
 
 const clipUp = {
   hidden: { y: '110%', transition: exitTransition },
-  visible: (custom) => ({ y: 0, transition: { duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.1 + custom * 0.08 } })
+  visible: (i) => ({ y: 0, transition: { duration: 0.7, ease: EASE_OUT_EXPO, delay: 0.1 + i * 0.07 } })
 };
 
-const sweep = {
-  hidden: { filter: 'blur(8px)', letterSpacing: '0.15em', opacity: 0, transition: exitTransition },
-  visible: { 
-    filter: ['blur(8px)', 'blur(2px)', 'blur(0px)'], 
-    letterSpacing: ['0.15em', '0.02em', '-0.03em'], 
-    opacity: [0, 0.8, 1], 
-    transition: { duration: 1.5, times: [0, 0.5, 1], ease: 'easeOut', delay: 0.4 } 
-  }
-};
-
-const fadeScale = {
-  hidden: { opacity: 0, y: 20, scale: 0.97, filter: 'blur(4px)', transition: exitTransition },
-  visible: { opacity: 1, y: 0, scale: 1, filter: 'blur(0px)', transition: { duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.6 } }
+// Replaces the old blur + letter-spacing sweep with a cheap rise-and-fade.
+// Delay kept short because this <h2> is the LCP element.
+const riseFade = {
+  hidden: { opacity: 0, y: 16, transition: exitTransition },
+  visible: (delay) => ({ opacity: 1, y: 0, transition: { duration: 0.7, ease: EASE_OUT_EXPO, delay } })
 };
 
 const springCTA = {
-  hidden: { opacity: 0, scale: 0.5, y: 15, transition: exitTransition },
-  visible: (custom) => ({ opacity: 1, scale: 1, y: 0, transition: { duration: 0.7, ease: [0.34, 1.56, 0.64, 1], delay: custom } })
+  hidden: { opacity: 0, scale: 0.9, y: 12, transition: exitTransition },
+  visible: (delay) => ({ opacity: 1, scale: 1, y: 0, transition: { duration: 0.5, ease: EASE_BACK, delay } })
 };
+
+// Split once at module level instead of on every render.
+const NAME_WORDS = 'ALFIAN SETYA DWI SAPUTRA'.split(' ');
 
 // ─── Hero Component ───
 export default function Hero() {
   const { t } = useLanguage();
-  const nameText = 'ALFIAN SETYA DWI SAPUTRA';
+  // Accessibility + perf: skip all entrance/exit motion if the OS requests reduced motion.
+  const reduceMotion = useReducedMotion();
 
   return (
     <motion.section 
       id="hero" 
       className="relative w-full max-w-7xl mx-auto px-margin-mobile lg:px-margin min-h-screen flex flex-col justify-center pt-2 pb-48 lg:pt-0 lg:pb-24 scroll-mt-24"
-      initial="hidden"
+      initial={reduceMotion ? false : 'hidden'}
       whileInView="visible"
       viewport={viewport}
     >
@@ -59,7 +62,7 @@ export default function Hero() {
         {/* ② Name — per-word clip slide up */}
         <div className="flex flex-col items-center gap-4 lg:gap-6 w-full">
           <h1 className="font-display text-display-mobile lg:text-display text-on-surface tracking-tight uppercase select-none flex flex-wrap justify-center gap-x-[0.25em]">
-            {nameText.split(' ').map((word, wi) => (
+            {NAME_WORDS.map((word, wi) => (
               <span key={wi} className="inline-flex overflow-hidden pb-2">
                 <motion.span
                   className="inline-block"
@@ -72,18 +75,20 @@ export default function Hero() {
             ))}
           </h1>
 
-          {/* ③ Subtitle — blur sweep (LCP ELEMENT) */}
+          {/* ③ Subtitle — rise fade (LCP ELEMENT) */}
           <motion.h2
             className="font-headline-xl text-headline-xl-mobile lg:text-headline-xl text-primary font-medium tracking-tight text-center"
-            variants={sweep}
+            custom={0.25}
+            variants={riseFade}
           >
             {t('hero_subtitle')}
           </motion.h2>
 
-          {/* ④ Description — fade scale */}
+          {/* ④ Description — rise fade */}
           <motion.p
             className="max-w-2xl font-body-md text-body-md lg:font-body-lg lg:text-body-lg text-on-surface-variant text-center"
-            variants={fadeScale}
+            custom={0.4}
+            variants={riseFade}
           >
             {t('hero_desc')}
           </motion.p>
@@ -93,8 +98,8 @@ export default function Hero() {
         <div className="flex flex-wrap justify-center items-center gap-3 lg:gap-space-md mt-4 lg:mt-0">
           <motion.a
             href="#projects"
-            className="px-5 py-3 lg:px-6 lg:py-3.5 rounded-full bg-on-surface text-surface font-label-md text-[11px] lg:text-label-md uppercase tracking-wider hover:shadow-[0_0_24px_rgba(56,189,248,0.35)] transition-all duration-300 flex items-center gap-2 group"
-            custom={0.8}
+            className="px-5 py-3 lg:px-6 lg:py-3.5 rounded-full bg-on-surface text-surface font-label-md text-[11px] lg:text-label-md uppercase tracking-wider hover:shadow-[0_0_24px_rgba(56,189,248,0.35)] transition-shadow duration-300 flex items-center gap-2 group"
+            custom={0.55}
             variants={springCTA}
           >
             <span>{t('hero_cta_projects')}</span>
@@ -102,8 +107,8 @@ export default function Hero() {
           </motion.a>
           <motion.a
             href="#contact"
-            className="px-5 py-3 lg:px-6 lg:py-3.5 rounded-full bg-surface-container-high/80 backdrop-blur-md text-on-surface font-label-md text-[11px] lg:text-label-md uppercase tracking-wider hover:text-primary transition-all duration-300 flex items-center gap-2"
-            custom={0.9}
+            className="px-5 py-3 lg:px-6 lg:py-3.5 rounded-full bg-surface-container-high/80 backdrop-blur-md text-on-surface font-label-md text-[11px] lg:text-label-md uppercase tracking-wider hover:text-primary transition-colors duration-300 flex items-center gap-2"
+            custom={0.65}
             variants={springCTA}
           >
             <span>{t('hero_cta_contact')}</span>
