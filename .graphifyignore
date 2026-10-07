@@ -1,0 +1,17 @@
+# File ini khusus memberi tahu Graphify agar MENGABAIKAN file-file berikut.
+
+# Abaikan folder aset gambar dan dokumen. 
+# AI tidak perlu menghabiskan waktu/memori untuk "melihat" dan membaca teks di dalam gambar/sertifikat/logo.
+public/images/
+public/icons/
+public/documents/
+
+# Abaikan semua ekstensi file visual di seluruh proyek untuk berjaga-jaga
+*.webp
+*.jpg
+*.jpeg
+*.png
+*.svg
+*.pdf
+*.ico
+*.gif
