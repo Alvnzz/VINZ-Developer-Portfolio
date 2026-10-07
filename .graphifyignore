@@ -1,12 +1,12 @@
-# File ini khusus memberi tahu Graphify agar MENGABAIKAN file-file berikut.
+# This file instructs Graphify to IGNORE the following files and directories.
 
-# Abaikan folder aset gambar dan dokumen. 
-# AI tidak perlu menghabiskan waktu/memori untuk "melihat" dan membaca teks di dalam gambar/sertifikat/logo.
+# Ignore image and document asset folders.
+# AI does not need to spend time/memory to "see" and extract text from images, certificates, or logos.
 public/images/
 public/icons/
 public/documents/
 
-# Abaikan semua ekstensi file visual di seluruh proyek untuk berjaga-jaga
+# Ignore all visual file extensions across the entire project just to be safe.
 *.webp
 *.jpg
 *.jpeg
