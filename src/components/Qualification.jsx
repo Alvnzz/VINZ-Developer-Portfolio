@@ -93,9 +93,9 @@ function DescriptionToggle({ text }) {
 
   return (
     <div className="mt-2">
-      <p className={`font-body-sm text-body-sm text-on-surface-variant leading-relaxed text-justify hyphens-auto text-pretty ${!expanded ? 'line-clamp-3' : ''}`}>
+      <div className={`font-body-sm text-body-sm text-on-surface-variant leading-relaxed text-justify hyphens-auto text-pretty ${!expanded ? 'line-clamp-3' : ''}`}>
         {text}
-      </p>
+      </div>
       <button
         onClick={() => setExpanded(!expanded)}
         className="mt-1.5 font-label-sm text-label-sm text-primary hover:text-primary-container transition-colors flex items-center gap-0.5"
