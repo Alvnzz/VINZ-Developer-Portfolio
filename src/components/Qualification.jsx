@@ -209,8 +209,13 @@ function DownloadMenu({ item }) {
         <div className="absolute left-0 bottom-full mb-2 w-72 sm:w-80 max-w-[calc(100vw-3rem)] rounded-xl bg-surface-container-high/95 backdrop-blur-xl border border-outline-variant/40 shadow-2xl p-2.5 z-40 animate-in fade-in zoom-in-95 duration-150">
           <div className="px-2 py-1 text-[11px] font-mono text-outline uppercase tracking-wider border-b border-surface-container-highest/60 mb-1.5 flex items-center justify-between">
             <span>{t('select_cert_to_download')}</span>
-            <button type="button" onClick={() => setOpen(false)} className="text-on-surface-variant hover:text-on-surface">
-              <span className="material-symbols-outlined text-[14px]">close</span>
+            <button 
+              type="button" 
+              onClick={() => setOpen(false)} 
+              aria-label="Tutup"
+              className="text-on-surface-variant hover:text-on-surface p-0.5 rounded transition-colors flex items-center justify-center cursor-pointer"
+            >
+              <span className="material-symbols-outlined text-[14px] leading-none">close</span>
             </button>
           </div>
 
@@ -223,13 +228,13 @@ function DownloadMenu({ item }) {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setOpen(false)}
-                className="flex items-center justify-between gap-2 px-2.5 py-2 rounded-lg text-[12px] text-on-surface hover:text-primary hover:bg-surface-container-highest/80 transition-all group"
+                className="flex items-center justify-between gap-2 px-2.5 py-2 rounded-lg text-[12px] text-on-surface hover:text-primary hover:bg-surface-container-highest/80 transition-all group cursor-pointer"
               >
                 <div className="flex items-center gap-2 min-w-0">
-                  <span className="material-symbols-outlined text-[16px] text-primary shrink-0">article</span>
+                  <span className="material-symbols-outlined text-[16px] text-primary shrink-0 leading-none">article</span>
                   <span className="truncate">{file.name}</span>
                 </div>
-                <span className="material-symbols-outlined text-[15px] text-outline group-hover:text-primary shrink-0 transition-colors">
+                <span className="material-symbols-outlined text-[15px] text-outline group-hover:text-primary shrink-0 transition-colors leading-none">
                   download
                 </span>
               </a>
@@ -242,8 +247,8 @@ function DownloadMenu({ item }) {
               onClick={handleDownloadAll}
               className="flex items-center justify-center gap-2 w-full py-2 px-3 rounded-lg bg-primary/10 hover:bg-primary/20 text-primary text-[12px] font-medium transition-colors cursor-pointer"
             >
-              <span className="material-symbols-outlined text-[16px]">download_for_offline</span>
-              <span>{t('download_all')}</span>
+              <span className="material-symbols-outlined text-[16px] shrink-0 leading-none">download_for_offline</span>
+              <span className="whitespace-nowrap">{t('download_all')}</span>
             </button>
           </div>
         </div>
