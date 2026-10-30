@@ -199,6 +199,8 @@ const dictionary = {
   
   btn_cert_doc: { id: 'Dokumen Sertifikasi', en: 'Certification Document' },
   btn_train_doc: { id: 'Sertifikat Pelatihan', en: 'Training Certificate' },
+  select_cert_to_download: { id: 'Pilih Dokumen Sertifikat:', en: 'Select Certificate Document:' },
+  download_all: { id: 'Unduh Semua Sekaligus', en: 'Download All Documents' },
 
   // --- Contact ---
   contact_heading: { id: 'Inisiasi Kolaborasi', en: 'Initiate Dialogue' },

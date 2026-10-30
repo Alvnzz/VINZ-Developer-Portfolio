@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { AnimatedHeader, AnimatedElement, StaggerParent, scaleTilt } from '../utils/animations';
 import TiltCard from './TiltCard';
@@ -11,10 +11,19 @@ const items = [
     categoryKey: 'train_0_category',
     btnKey: 'btn_train_doc',
     downloadUrl: './downloads/Full-Stack Development (Digital Talent Academy) - Alfian Setya Dwi Saputra.pdf',
-    downloadUrls: [
-      './downloads/Programming Fundamental (Digital Talent Academy) - Alfian Setya Dwi Saputra.pdf',
-      './downloads/Front-End & Back-End Development (Digital Talent Academy) - Alfian Setya Dwi Saputra.pdf',
-      './downloads/Full-Stack Development (Digital Talent Academy) - Alfian Setya Dwi Saputra.pdf'
+    downloadFiles: [
+      {
+        name: 'Programming Fundamental',
+        url: './downloads/Programming Fundamental (Digital Talent Academy) - Alfian Setya Dwi Saputra.pdf'
+      },
+      {
+        name: 'Front-End & Back-End Development',
+        url: './downloads/Front-End & Back-End Development (Digital Talent Academy) - Alfian Setya Dwi Saputra.pdf'
+      },
+      {
+        name: 'Full-Stack Development',
+        url: './downloads/Full-Stack Development (Digital Talent Academy) - Alfian Setya Dwi Saputra.pdf'
+      }
     ],
     image: './images/digitalent-fsd-1.webp',
     images: [
@@ -35,9 +44,15 @@ const items = [
     categoryKey: 'train_1_category',
     btnKey: 'btn_train_doc',
     downloadUrl: './downloads/Intermediate Assistant Web Developer (Digital Talent Academy) - Alfian Setya Dwi Saputra.pdf',
-    downloadUrls: [
-      './downloads/Fundamental of Assistant Web Developer (Digital Talent Academy) - Alfian Setya Dwi Saputra.pdf',
-      './downloads/Intermediate Assistant Web Developer (Digital Talent Academy) - Alfian Setya Dwi Saputra.pdf'
+    downloadFiles: [
+      {
+        name: 'Fundamental of Assistant Web Developer',
+        url: './downloads/Fundamental of Assistant Web Developer (Digital Talent Academy) - Alfian Setya Dwi Saputra.pdf'
+      },
+      {
+        name: 'Intermediate Assistant Web Developer',
+        url: './downloads/Intermediate Assistant Web Developer (Digital Talent Academy) - Alfian Setya Dwi Saputra.pdf'
+      }
     ],
     image: './images/digitalent-awd-1.webp',
     images: [
@@ -123,6 +138,120 @@ function DescriptionToggle({ text }) {
   );
 }
 
+function DownloadMenu({ item }) {
+  const [open, setOpen] = useState(false);
+  const { t } = useLanguage();
+  const menuRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setOpen(false);
+      }
+    };
+    if (open) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [open]);
+
+  if (!item.downloadFiles || item.downloadFiles.length <= 1) {
+    return (
+      <a 
+        href={item.downloadUrl} 
+        download 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        className="flex w-fit items-center gap-2 font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors group/btn cursor-pointer"
+      >
+        <span className="material-symbols-outlined text-[18px]">description</span>
+        {t(item.btnKey)}
+        <span className="material-symbols-outlined text-[16px] opacity-0 -translate-x-2 group-hover/btn:opacity-100 group-hover/btn:translate-x-0 transition-all">arrow_forward</span>
+      </a>
+    );
+  }
+
+  const handleDownloadAll = () => {
+    item.downloadFiles.forEach((file, idx) => {
+      setTimeout(() => {
+        const link = document.createElement('a');
+        link.href = file.url;
+        link.setAttribute('download', file.url.split('/').pop() || '');
+        link.setAttribute('target', '_blank');
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }, idx * 400);
+    });
+    setOpen(false);
+  };
+
+  return (
+    <div className="relative" ref={menuRef}>
+      <button 
+        type="button"
+        onClick={() => setOpen(!open)}
+        className="flex w-fit items-center gap-2 font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors group/btn cursor-pointer"
+      >
+        <span className="material-symbols-outlined text-[18px]">description</span>
+        <span>{t(item.btnKey)}</span>
+        <span className="text-[10px] font-code px-1.5 py-0.5 rounded-full bg-primary/10 text-primary border border-primary/20">
+          {item.downloadFiles.length} File
+        </span>
+        <span className={`material-symbols-outlined text-[16px] transition-transform duration-200 ${open ? 'rotate-180 text-primary' : ''}`}>
+          expand_more
+        </span>
+      </button>
+
+      {open && (
+        <div className="absolute left-0 bottom-full mb-2 w-72 sm:w-80 max-w-[calc(100vw-3rem)] rounded-xl bg-surface-container-high/95 backdrop-blur-xl border border-outline-variant/40 shadow-2xl p-2.5 z-40 animate-in fade-in zoom-in-95 duration-150">
+          <div className="px-2 py-1 text-[11px] font-mono text-outline uppercase tracking-wider border-b border-surface-container-highest/60 mb-1.5 flex items-center justify-between">
+            <span>{t('select_cert_to_download')}</span>
+            <button type="button" onClick={() => setOpen(false)} className="text-on-surface-variant hover:text-on-surface">
+              <span className="material-symbols-outlined text-[14px]">close</span>
+            </button>
+          </div>
+
+          <div className="flex flex-col gap-1 max-h-60 overflow-y-auto">
+            {item.downloadFiles.map((file, idx) => (
+              <a
+                key={idx}
+                href={file.url}
+                download
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setOpen(false)}
+                className="flex items-center justify-between gap-2 px-2.5 py-2 rounded-lg text-[12px] text-on-surface hover:text-primary hover:bg-surface-container-highest/80 transition-all group"
+              >
+                <div className="flex items-center gap-2 min-w-0">
+                  <span className="material-symbols-outlined text-[16px] text-primary shrink-0">article</span>
+                  <span className="truncate">{file.name}</span>
+                </div>
+                <span className="material-symbols-outlined text-[15px] text-outline group-hover:text-primary shrink-0 transition-colors">
+                  download
+                </span>
+              </a>
+            ))}
+          </div>
+
+          <div className="pt-2 mt-1.5 border-t border-surface-container-highest/60">
+            <button
+              type="button"
+              onClick={handleDownloadAll}
+              className="flex items-center justify-center gap-2 w-full py-2 px-3 rounded-lg bg-primary/10 hover:bg-primary/20 text-primary text-[12px] font-medium transition-colors cursor-pointer"
+            >
+              <span className="material-symbols-outlined text-[16px]">download_for_offline</span>
+              <span>{t('download_all')}</span>
+            </button>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
 export default function Qualification() {
   const { t } = useLanguage();
   const [previewImages, setPreviewImages] = useState(null);
@@ -146,22 +275,6 @@ export default function Qualification() {
     setPreviewIndex((prev) => (prev - 1 + previewImages.length) % previewImages.length);
   };
 
-  const handleDownload = (e, tr) => {
-    if (tr.downloadUrls && tr.downloadUrls.length > 1) {
-      e.preventDefault();
-      tr.downloadUrls.forEach((url, idx) => {
-        setTimeout(() => {
-          const link = document.createElement('a');
-          link.href = url;
-          link.setAttribute('download', url.split('/').pop() || '');
-          link.setAttribute('target', '_blank');
-          document.body.appendChild(link);
-          link.click();
-          document.body.removeChild(link);
-        }, idx * 400);
-      });
-    }
-  };
 
   return (
     <>
@@ -222,18 +335,7 @@ export default function Qualification() {
                   </div>
                   
                   <div className="mt-auto pt-4 border-t border-surface-container-high/60">
-                    <a 
-                      href={tr.downloadUrl} 
-                      download 
-                      onClick={(e) => handleDownload(e, tr)}
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      className="flex w-fit items-center gap-2 font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors group/btn cursor-pointer"
-                    >
-                      <span className="material-symbols-outlined text-[18px]">description</span>
-                      {t(tr.btnKey)}
-                      <span className="material-symbols-outlined text-[16px] opacity-0 -translate-x-2 group-hover/btn:opacity-100 group-hover/btn:translate-x-0 transition-all">arrow_forward</span>
-                    </a>
+                    <DownloadMenu item={tr} />
                   </div>
                 </div>
               </AnimatedElement>
