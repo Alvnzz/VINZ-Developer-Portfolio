@@ -10,6 +10,7 @@ const items = [
     dateKey: 'train_0_date', institution: 'Digital Talent Academy',
     categoryKey: 'train_0_category',
     btnKey: 'btn_train_doc',
+    downloadUrl: './downloads/Full-Stack Development (Digital Talent Academy) - Alfian Setya Dwi Saputra.pdf',
     image: './images/digitalent-fsd-1.webp',
     images: [
       './images/digitalent-fsd-1.webp',
@@ -28,6 +29,7 @@ const items = [
     dateKey: 'train_1_date', institution: 'Digital Talent Academy',
     categoryKey: 'train_1_category',
     btnKey: 'btn_train_doc',
+    downloadUrl: './downloads/Intermediate Assistant Web Developer (Digital Talent Academy) - Alfian Setya Dwi Saputra.pdf',
     image: './images/digitalent-awd-1.webp',
     images: [
       './images/digitalent-awd-1.webp',
@@ -44,6 +46,7 @@ const items = [
     dateKey: 'train_2_date', institution: 'freeCodeCamp',
     categoryKey: 'train_2_category',
     btnKey: 'btn_train_doc',
+    downloadUrl: './downloads/freeCodeCamp Front-End Development Libraries V8 Developer Certification - Alfian Setya Dwi Saputra.pdf',
     image: './images/freecodecamp.webp',
     logo: 'https://avatars.githubusercontent.com/u/9892522?v=4&s=80',
     logoClass: 'object-cover scale-110',
@@ -54,6 +57,7 @@ const items = [
     dateKey: 'train_3_date', institution: 'RevoU',
     categoryKey: 'train_3_category',
     btnKey: 'btn_train_doc',
+    downloadUrl: './downloads/RevoU Intro to Software Engineering Fundamental Course - Alfian Setya Dwi Saputra.pdf',
     image: './images/revou.webp',
     logo: 'https://www.google.com/s2/favicons?domain=revou.co&sz=128'
   },
@@ -64,6 +68,7 @@ const items = [
     dateKey: 'cert_1_date', institution: 'HackerRank',
     categoryKey: 'cert_1_category',
     btnKey: 'btn_cert_doc',
+    downloadUrl: './downloads/HackerRank Software Engineer Certification - Alfian Setya Dwi Saputra.pdf',
     image: './images/hackerrank.webp',
     logo: 'https://www.google.com/s2/favicons?domain=hackerrank.com&sz=128'
   },
@@ -72,6 +77,7 @@ const items = [
     dateKey: 'cert_2_date', institution: 'Google Analytics',
     categoryKey: 'cert_2_category',
     btnKey: 'btn_cert_doc',
+    downloadUrl: './downloads/Google Analytics Certification - Alfian Setya Dwi Saputra.pdf',
     image: './images/google-analytics.webp',
     logo: 'https://www.google.com/s2/favicons?domain=google.com&sz=128'
   },
@@ -80,6 +86,7 @@ const items = [
     dateKey: 'cert_5_date', institution: 'Altair RapidMiner',
     categoryKey: 'cert_5_category',
     btnKey: 'btn_cert_doc',
+    downloadUrl: './downloads/RapidMiner Data Engineering Professional Certification - Alfian Setya Dwi Saputra.pdf',
     image: './images/rapidminer.webp',
     logo: 'https://media.licdn.com/dms/image/v2/C4E0BAQFK5k_r2gO70Q/company-logo_200_200/company-logo_200_200/0/1651579826463/rapidminer_logo?e=2147483647&v=beta&t=VuUCVCPWatWXrjBhIiRGgm6IvBf9JC4aJeYfsQg2wDE',
     logoClass: 'object-contain scale-[70%]',
@@ -190,7 +197,7 @@ export default function Qualification() {
                   
                   <div className="mt-auto pt-4 border-t border-surface-container-high/60">
                     <a 
-                      href={tr.image.replace('./images/', './downloads/').replace('.webp', '.png')} 
+                      href={tr.downloadUrl} 
                       download 
                       target="_blank" 
                       rel="noopener noreferrer" 
