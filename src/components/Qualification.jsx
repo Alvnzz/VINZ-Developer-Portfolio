@@ -11,6 +11,11 @@ const items = [
     categoryKey: 'train_0_category',
     btnKey: 'btn_train_doc',
     downloadUrl: './downloads/Full-Stack Development (Digital Talent Academy) - Alfian Setya Dwi Saputra.pdf',
+    downloadUrls: [
+      './downloads/Programming Fundamental (Digital Talent Academy) - Alfian Setya Dwi Saputra.pdf',
+      './downloads/Front-End & Back-End Development (Digital Talent Academy) - Alfian Setya Dwi Saputra.pdf',
+      './downloads/Full-Stack Development (Digital Talent Academy) - Alfian Setya Dwi Saputra.pdf'
+    ],
     image: './images/digitalent-fsd-1.webp',
     images: [
       './images/digitalent-fsd-1.webp',
@@ -30,6 +35,10 @@ const items = [
     categoryKey: 'train_1_category',
     btnKey: 'btn_train_doc',
     downloadUrl: './downloads/Intermediate Assistant Web Developer (Digital Talent Academy) - Alfian Setya Dwi Saputra.pdf',
+    downloadUrls: [
+      './downloads/Fundamental of Assistant Web Developer (Digital Talent Academy) - Alfian Setya Dwi Saputra.pdf',
+      './downloads/Intermediate Assistant Web Developer (Digital Talent Academy) - Alfian Setya Dwi Saputra.pdf'
+    ],
     image: './images/digitalent-awd-1.webp',
     images: [
       './images/digitalent-awd-1.webp',
@@ -137,6 +146,23 @@ export default function Qualification() {
     setPreviewIndex((prev) => (prev - 1 + previewImages.length) % previewImages.length);
   };
 
+  const handleDownload = (e, tr) => {
+    if (tr.downloadUrls && tr.downloadUrls.length > 1) {
+      e.preventDefault();
+      tr.downloadUrls.forEach((url, idx) => {
+        setTimeout(() => {
+          const link = document.createElement('a');
+          link.href = url;
+          link.setAttribute('download', url.split('/').pop() || '');
+          link.setAttribute('target', '_blank');
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+        }, idx * 400);
+      });
+    }
+  };
+
   return (
     <>
       <section id="training" className="relative w-full max-w-7xl mx-auto px-margin-mobile lg:px-margin py-6 lg:py-8 scroll-mt-24">
@@ -199,9 +225,10 @@ export default function Qualification() {
                     <a 
                       href={tr.downloadUrl} 
                       download 
+                      onClick={(e) => handleDownload(e, tr)}
                       target="_blank" 
                       rel="noopener noreferrer" 
-                      className="flex w-fit items-center gap-2 font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors group/btn"
+                      className="flex w-fit items-center gap-2 font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors group/btn cursor-pointer"
                     >
                       <span className="material-symbols-outlined text-[18px]">description</span>
                       {t(tr.btnKey)}
