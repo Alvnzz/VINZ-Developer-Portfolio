@@ -6,6 +6,24 @@ import TiltCard from './TiltCard';
 const items = [
   // Trainings
   {
+    titleKey: 'train_0_title', descKey: 'train_0_desc',
+    dateKey: 'train_0_date', institution: 'Digital Talent Academy',
+    categoryKey: 'train_0_category',
+    btnKey: 'btn_train_doc',
+    image: './images/digitalent-fsd-1.webp',
+    images: [
+      './images/digitalent-fsd-1.webp',
+      './images/digitalent-fsd-2.webp',
+      './images/digitalent-fsd-3.webp',
+      './images/digitalent-fsd-4.webp',
+      './images/digitalent-fsd-5.webp',
+      './images/digitalent-fsd-6.webp'
+    ],
+    logo: 'https://mobile.sdmdigital.id/assets/img/dts-mono.png',
+    logoClass: 'object-contain scale-[70%]',
+    bgClass: 'bg-white shadow-sm'
+  },
+  {
     titleKey: 'train_1_title', descKey: 'train_1_desc',
     dateKey: 'train_1_date', institution: 'Digital Talent Academy',
     categoryKey: 'train_1_category',

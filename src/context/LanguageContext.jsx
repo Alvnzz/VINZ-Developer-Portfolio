@@ -157,6 +157,11 @@ const dictionary = {
   // --- Training & Certifications ---
   train_heading: { id: 'Pelatihan & Sertifikasi', en: 'Training & Certifications' },
   
+  train_0_title: { id: 'Full Stack Developer - Nasional', en: 'Full Stack Developer - National' },
+  train_0_date: { id: 'Oktober 2026 - Desember 2026', en: 'Oct 2026 - Dec 2026' },
+  train_0_category: { id: 'PENGEMBANGAN FULL-STACK', en: 'FULL-STACK DEVELOPMENT' },
+  train_0_desc: { id: 'Menyelesaikan pelatihan Programming Fundamental, Front-End & Back-End, dan Full-Stack Development melalui Digital Talent Scholarship 2026 di Digital Talent Academy. Mengembangkan keterampilan praktis dengan HTML, CSS, JavaScript, React, Tailwind CSS, Node.js, Express.js, dan MongoDB; membangun REST API, menerapkan autentikasi, secure coding, dan pengujian. Mempelajari arsitektur perangkat lunak, monorepo, deployment serverless Vercel, CI/CD GitHub Actions, serta User Acceptance Testing (UAT).', en: 'Completed Programming Fundamental, Front-End & Back-End, and Full-Stack Development training through Digital Talent Scholarship 2026 at Digital Talent Academy. Built practical skills with HTML, CSS, JavaScript, React, Tailwind CSS, Node.js, Express.js, and MongoDB; developing REST APIs, applying authentication and secure coding, and testing applications. Covered software architecture, monorepo management, Vercel serverless deployment, GitHub Actions CI/CD, and User Acceptance Testing (UAT).' },
+  
   train_1_title: { id: 'Assistant Web Developer - Nasional', en: 'Assistant Web Developer - National' },
   train_1_date: { id: 'Mei 2026 - Desember 2026', en: 'May 2026 - Dec 2026' },
   train_1_category: { id: 'PENGEMBANGAN WEB', en: 'WEB DEVELOPMENT' },
