@@ -93,7 +93,7 @@ function DescriptionToggle({ text }) {
 
   return (
     <div className="mt-2">
-      <p className={`font-body-sm text-body-sm text-on-surface-variant leading-relaxed text-justify [text-justify:inter-word] hyphens-auto text-pretty ${!expanded ? 'line-clamp-3' : ''}`}>
+      <p className={`font-body-sm text-body-sm text-on-surface-variant leading-relaxed text-justify hyphens-auto text-pretty ${!expanded ? 'line-clamp-3' : ''}`}>
         {text}
       </p>
       <button
