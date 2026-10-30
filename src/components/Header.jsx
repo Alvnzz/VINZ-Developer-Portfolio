@@ -172,7 +172,7 @@ export default function Header() {
 
           {/* Download CV */}
           <a
-            href="/documents/CV_Alfian_Setya_Dwi_Saputra.pdf"
+            href="./documents/CV_Alfian_Setya_Dwi_Saputra.pdf"
             download="CV_Alfian_Setya_Dwi_Saputra.pdf"
             target="_blank"
             rel="noopener noreferrer"
@@ -215,7 +215,7 @@ export default function Header() {
           
           <div className="border-t border-surface-container-high/60 pt-3 mt-1">
             <a
-              href="/documents/CV_Alfian_Setya_Dwi_Saputra.pdf"
+              href="./documents/CV_Alfian_Setya_Dwi_Saputra.pdf"
               download="CV_Alfian_Setya_Dwi_Saputra.pdf"
               target="_blank"
               rel="noopener noreferrer"
