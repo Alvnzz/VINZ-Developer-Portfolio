@@ -256,6 +256,7 @@ export function LanguageProvider({ children }) {
 
   useEffect(() => {
     document.title = lang === 'en' ? 'VINZ Developer - Portfolio' : 'VINZ Developer - Portofolio';
+    document.documentElement.lang = lang;
   }, [lang]);
 
   return (
