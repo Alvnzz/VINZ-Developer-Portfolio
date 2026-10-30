@@ -11,7 +11,12 @@ const items = [
     categoryKey: 'train_1_category',
     btnKey: 'btn_train_doc',
     image: './images/digitalent-awd-1.webp',
-    images: ['./images/digitalent-awd-1.webp', './images/digitalent-awd-2.webp'],
+    images: [
+      './images/digitalent-awd-1.webp',
+      './images/digitalent-awd-2.webp',
+      './images/digitalent-awd-3.webp',
+      './images/digitalent-awd-4.webp'
+    ],
     logo: 'https://mobile.sdmdigital.id/assets/img/dts-mono.png',
     logoClass: 'object-contain scale-[70%]',
     bgClass: 'bg-white shadow-sm'
