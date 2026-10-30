@@ -5,6 +5,7 @@
 public/images/
 public/icons/
 public/documents/
+public/downloads/
 
 # Ignore all visual file extensions across the entire project just to be safe.
 *.webp

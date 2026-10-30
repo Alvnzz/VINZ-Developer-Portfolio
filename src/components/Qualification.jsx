@@ -190,7 +190,7 @@ export default function Qualification() {
                   
                   <div className="mt-auto pt-4 border-t border-surface-container-high/60">
                     <a 
-                      href={tr.image.replace('./images/', './images/downloads/').replace('.webp', '.png')} 
+                      href={tr.image.replace('./images/', './downloads/').replace('.webp', '.png')} 
                       download 
                       target="_blank" 
                       rel="noopener noreferrer" 
