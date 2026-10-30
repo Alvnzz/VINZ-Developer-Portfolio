@@ -46,7 +46,7 @@ const items = [
     dateKey: 'train_2_date', institution: 'freeCodeCamp',
     categoryKey: 'train_2_category',
     btnKey: 'btn_train_doc',
-    downloadUrl: './downloads/freeCodeCamp Front-End Development Libraries V8 Developer Certification - Alfian Setya Dwi Saputra.pdf',
+    downloadUrl: './downloads/freeCodeCamp Front-End Development Libraries V8 Developer Certification - Alfian Setya Dwi Saputra.png',
     image: './images/freecodecamp.webp',
     logo: 'https://avatars.githubusercontent.com/u/9892522?v=4&s=80',
     logoClass: 'object-cover scale-110',
@@ -77,7 +77,7 @@ const items = [
     dateKey: 'cert_2_date', institution: 'Google Analytics',
     categoryKey: 'cert_2_category',
     btnKey: 'btn_cert_doc',
-    downloadUrl: './downloads/Google Analytics Certification - Alfian Setya Dwi Saputra.pdf',
+    downloadUrl: './downloads/Google Analytics Certification - Alfian Setya Dwi Saputra.png',
     image: './images/google-analytics.webp',
     logo: 'https://www.google.com/s2/favicons?domain=google.com&sz=128'
   },
