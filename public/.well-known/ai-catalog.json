@@ -36,7 +36,7 @@
       "identifier": "urn:air:vinz-developer-portfolio.pages.dev:portfolio:cv",
       "displayName": "Curriculum Vitae",
       "type": "application/pdf",
-      "url": "https://vinz-developer-portfolio.pages.dev/documents/CV_Alfian_Setya_Dwi_Saputra.pdf",
+      "url": "https://vinz-developer-portfolio.pages.dev/documents/CV%20-%20Alfian%20Setya%20Dwi%20Saputra.pdf",
       "description": "Latest CV of Alfian Setya Dwi Saputra.",
       "tags": ["cv", "resume"],
       "representativeQueries": [
