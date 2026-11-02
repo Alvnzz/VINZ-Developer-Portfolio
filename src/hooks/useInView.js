@@ -9,9 +9,9 @@ import { useEffect, useRef, useState } from 'react';
  *
  * @param {IntersectionObserverInit} options - pass a module-level constant to keep the observer stable.
  */
-export function useInView(options, initialValue = false) {
+export function useInView(options) {
   const ref = useRef(null);
-  const [inView, setInView] = useState(initialValue);
+  const [inView, setInView] = useState(false);
 
   useEffect(() => {
     const el = ref.current;

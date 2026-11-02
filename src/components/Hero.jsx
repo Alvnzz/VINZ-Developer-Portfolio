@@ -18,7 +18,7 @@ const delay = (seconds) => ({ '--hero-d': `${seconds}s` });
 // ─── Hero Component ───
 export default function Hero() {
   const { t } = useLanguage();
-  const [sectionRef, inView] = useInView(VIEWPORT_OPTIONS, true);
+  const [sectionRef, inView] = useInView(VIEWPORT_OPTIONS);
 
   return (
     <section

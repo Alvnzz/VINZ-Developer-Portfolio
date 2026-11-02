@@ -74,19 +74,7 @@
    WHY pure CSS: transitions on `transform`/`opacity` run on the compositor (GPU) thread,
    so they stay smooth even while JS is busy on first load (particles init, React render).
    JS-driven per-frame animation stuttered in exactly that window.
-   WHY opacity stays 1 on initial in-view render: Chromium's LCP algorithm ignores elements
-   while `opacity: 0`, which previously added >1,000ms of Element Render Delay to the Hero LCP.
-   Animating `transform` via @keyframes while keeping initial `opacity: 1` allows LCP to be
-   recorded on the very first paint while preserving the staggered entrance motion. */
-@keyframes hero-enter {
-  from {
-    transform: translate3d(0, var(--hero-y), 0) scale(var(--hero-s));
-  }
-  to {
-    transform: translate3d(0, 0, 0) scale(1);
-  }
-}
-
+   Toggled by [data-inview] on the section → plays enter AND reverse/exit. */
 .hero-reveal {
   --hero-y: 16px;
   --hero-s: 1;
@@ -102,7 +90,6 @@
 [data-inview='true'] .hero-reveal {
   opacity: 1;
   transform: translate3d(0, 0, 0) scale(1);
-  animation: hero-enter 0.7s var(--hero-ease) var(--hero-d) backwards;
   transition:
     opacity 0.7s var(--hero-ease) var(--hero-d),
     transform 0.7s var(--hero-ease) var(--hero-d);
