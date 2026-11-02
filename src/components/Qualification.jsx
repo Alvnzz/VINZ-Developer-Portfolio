@@ -335,7 +335,7 @@ export default function Qualification() {
                       <div className="flex items-center gap-2">
                         {tr.logo && (
                           <div className={`w-5 h-5 flex-shrink-0 flex items-center justify-center rounded-full overflow-hidden ${tr.bgClass || 'bg-transparent'}`}>
-                            <img src={tr.logo} alt={tr.institution} className={`w-full h-full ${tr.logoClass || 'object-cover scale-110'}`} onError={(e) => e.target.style.display = 'none'} />
+                            <img src={tr.logo} alt={tr.institution} loading="lazy" decoding="async" referrerPolicy="no-referrer" className={`w-full h-full ${tr.logoClass || 'object-cover scale-110'}`} onError={(e) => e.target.style.display = 'none'} />
                           </div>
                         )}
                         <span className="font-body-md text-body-md text-primary font-medium">{tr.institution}</span>

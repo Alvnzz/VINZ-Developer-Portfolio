@@ -28,6 +28,8 @@ export default function Education() {
                   <img 
                     src="./images/uty.webp" 
                     alt="Logo UTY" 
+                    loading="lazy"
+                    decoding="async"
                     className="w-8 h-8 object-contain rounded-full transition-transform duration-700 group-hover:rotate-[360deg] group-hover:scale-110 shadow-sm" 
                   />
                   <span className="font-body-md text-body-sm lg:text-body-lg text-primary font-medium group-hover:text-primary-container transition-colors duration-300">Universitas Teknologi Yogyakarta</span>
@@ -83,6 +85,8 @@ export default function Education() {
               <img 
                 src="./images/graduation.webp" 
                 alt="Alfian Setya Dwi Saputra Graduation" 
+                loading="lazy"
+                decoding="async"
                 className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700" 
               />
             </TiltCard>
@@ -92,6 +96,8 @@ export default function Education() {
               <img 
                 src="./images/uty-campus.webp" 
                 alt="Universitas Teknologi Yogyakarta Graduation" 
+                loading="lazy"
+                decoding="async"
                 className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />

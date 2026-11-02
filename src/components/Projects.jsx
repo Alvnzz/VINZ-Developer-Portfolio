@@ -4,13 +4,13 @@ import { useLanguage } from '../context/LanguageContext';
 import { AnimatedHeader, AnimatedElement, StaggerParent, scaleTilt, fadeUp, popIn } from '../utils/animations';
 
 const projectTags = [
-  { name: 'Flutter', icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg" alt="Flutter" className="w-4 h-4 object-contain" /> },
-  { name: 'Dart', icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dart/dart-original.svg" alt="Dart" className="w-4 h-4 object-contain" /> },
-  { name: 'Firebase', icon: <img src="./icons/firebase.svg" alt="Firebase" className="w-4 h-4 object-contain" /> },
-  { name: 'Firestore', icon: <img src="./icons/firestore.webp" alt="Firestore" className="w-4 h-4 object-contain" /> },
-  { name: 'Visual Studio Code', icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" alt="VS Code" className="w-4 h-4 object-contain" /> },
-  { name: 'Antigravity', icon: <img src="./icons/antigravity.webp" alt="Antigravity" className="w-4 h-4 object-contain" /> },
-  { name: 'Android Studio', icon: <img src="./icons/android-studio.svg" alt="Android Studio" className="w-4 h-4 object-contain" /> },
+  { name: 'Flutter', icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg" alt="Flutter" loading="lazy" decoding="async" className="w-4 h-4 object-contain" /> },
+  { name: 'Dart', icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dart/dart-original.svg" alt="Dart" loading="lazy" decoding="async" className="w-4 h-4 object-contain" /> },
+  { name: 'Firebase', icon: <img src="./icons/firebase.svg" alt="Firebase" loading="lazy" decoding="async" className="w-4 h-4 object-contain" /> },
+  { name: 'Firestore', icon: <img src="./icons/firestore.webp" alt="Firestore" loading="lazy" decoding="async" className="w-4 h-4 object-contain" /> },
+  { name: 'Visual Studio Code', icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" alt="VS Code" loading="lazy" decoding="async" className="w-4 h-4 object-contain" /> },
+  { name: 'Antigravity', icon: <img src="./icons/antigravity.webp" alt="Antigravity" loading="lazy" decoding="async" className="w-4 h-4 object-contain" /> },
+  { name: 'Android Studio', icon: <img src="./icons/android-studio.svg" alt="Android Studio" loading="lazy" decoding="async" className="w-4 h-4 object-contain" /> },
 ];
 
 const carouselImages = [
@@ -94,6 +94,8 @@ export default function Projects() {
                         <img 
                           src={src} 
                           alt={`Project Screenshot ${idx + 1}`} 
+                          loading="lazy"
+                          decoding="async"
                           className="w-full h-full object-cover"
                         />
                         {offset !== 0 && (
@@ -158,7 +160,7 @@ export default function Projects() {
                     <div className="relative cursor-default group shrink-0">
                       {/* Continuous Ripple Ring */}
                       <div className="absolute inset-0 bg-primary/30 rounded-full animate-ping opacity-40 group-hover:animate-none group-hover:scale-110 transition-transform duration-300" style={{ animationDuration: '2.5s' }} />
-                      <img src="./images/alvins-bakery.webp" alt="ALVIN'S Bakery Logo" className="relative z-10 w-14 h-14 lg:w-16 lg:h-16 object-contain bg-white rounded-full p-1.5 border border-outline-variant/20 group-hover:shadow-[0_0_15px_rgba(56,189,248,0.4)] transition-shadow duration-300" />
+                      <img src="./images/alvins-bakery.webp" alt="ALVIN'S Bakery Logo" loading="lazy" decoding="async" className="relative z-10 w-14 h-14 lg:w-16 lg:h-16 object-contain bg-white rounded-full p-1.5 border border-outline-variant/20 group-hover:shadow-[0_0_15px_rgba(56,189,248,0.4)] transition-shadow duration-300" />
                     </div>
                     <h3 className="font-headline-lg text-[22px] leading-[28px] lg:text-headline-lg text-on-surface">{t('proj_1_title')}</h3>
                   </div>

@@ -55,7 +55,7 @@ export default function Header() {
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
+    if (window.scrollY > 0) handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -66,7 +66,7 @@ export default function Header() {
         <div className="flex items-center gap-3">
           {/* Avatar (Links to Contact) */}
           <a href="#contact" aria-label="Go to contact section" className="relative flex items-center group transition-transform hover:scale-105">
-            <img alt="Profile" className="w-7 h-7 lg:w-8 lg:h-8 rounded-full object-cover border-2 border-surface-variant shadow-sm group-hover:border-primary/50 transition-colors" src={LOGO_URL} />
+            <img alt="Profile" width="32" height="32" decoding="async" className="w-7 h-7 lg:w-8 lg:h-8 rounded-full object-cover border-2 border-surface-variant shadow-sm group-hover:border-primary/50 transition-colors" src={LOGO_URL} />
           </a>
           {/* Name (Links to Hero) */}
           <a href="#hero" className="flex items-center gap-1.5 group">
@@ -144,7 +144,10 @@ export default function Header() {
                 lang === 'id' ? 'bg-primary-container text-on-primary-container' : 'text-on-surface-variant hover:text-on-surface'
               }`}
             >
-              <img src="https://flagcdn.com/w20/id.png" alt="ID Flag" className="w-[14px] h-[10px] object-cover rounded-[1px]" />
+              <svg viewBox="0 0 14 10" aria-label="ID Flag" role="img" className="w-[14px] h-[10px] rounded-[1px] shrink-0 overflow-hidden">
+                <rect width="14" height="5" fill="#CE1126" />
+                <rect y="5" width="14" height="5" fill="#FFFFFF" />
+              </svg>
               <span className="mt-[1px]">ID</span>
             </button>
             <button
@@ -153,7 +156,13 @@ export default function Header() {
                 lang === 'en' ? 'bg-primary-container text-on-primary-container' : 'text-on-surface-variant hover:text-on-surface'
               }`}
             >
-              <img src="https://flagcdn.com/w20/gb.png" alt="UK Flag" className="w-[14px] h-[10px] object-cover rounded-[1px]" />
+              <svg viewBox="0 0 60 30" preserveAspectRatio="xMidYMid slice" aria-label="UK Flag" role="img" className="w-[14px] h-[10px] rounded-[1px] shrink-0 overflow-hidden">
+                <rect width="60" height="30" fill="#012169" />
+                <path d="M0,0 L60,30 M60,0 L0,30" stroke="#FFFFFF" strokeWidth="6" />
+                <path d="M0,0 L60,30 M60,0 L0,30" stroke="#C8102E" strokeWidth="4" />
+                <path d="M30,0 V30 M0,15 H60" stroke="#FFFFFF" strokeWidth="10" />
+                <path d="M30,0 V30 M0,15 H60" stroke="#C8102E" strokeWidth="6" />
+              </svg>
               <span className="mt-[1px]">EN</span>
             </button>
           </div>

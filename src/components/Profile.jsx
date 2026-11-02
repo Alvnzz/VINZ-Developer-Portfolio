@@ -42,6 +42,8 @@ export default function Profile() {
                   alt="Alvnzz Editorial Portrait" 
                   className="w-full h-full object-cover group-hover/portrait:scale-105 transition-transform duration-[1500ms] ease-out" 
                   src={PORTRAIT_URL} 
+                  loading="lazy"
+                  decoding="async"
                   variants={imageReveal}
                 />
                 
